@@ -21,7 +21,10 @@ export class ProductsService {
     return this.httpClient.get<Category>(categoriesUrl);
   }
 
-
+  ShowProduct(productId): Observable<Product>{
+    const productUrl = 'http://127.0.0.1:8000/api/products/'+ productId;
+    return this.httpClient.get<Product>(this.productUrl); // return an observable
+  }
 
 
 
