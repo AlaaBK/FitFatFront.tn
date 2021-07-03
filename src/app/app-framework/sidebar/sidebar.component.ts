@@ -13,9 +13,9 @@ export class SidebarComponent implements OnInit {
   constructor(private productsService: ProductsService , private router : Router ) { }
 
   ngOnInit(): void {
-    this.productsService.getCategories().subscribe(data => {
-      this.categoryList = data['hydra:member'];
-    });
+    // this.productsService.getCategories().subscribe(data => {
+    //   this.categoryList = data['hydra:member'];
+    // });
   }
 
 }
