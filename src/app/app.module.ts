@@ -10,8 +10,11 @@ import { AdminBlogComponent } from './admin-blog/admin-blog.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ShowBlogComponent } from './show-blog/show-blog.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import { OrdersModule } from './orders/orders.module';
+import { AppFrameworkModule } from './app-framework/app-framework.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +26,17 @@ import {FormsModule} from "@angular/forms";
     AddBlogComponent,
     NotFoundComponent,
     ShowBlogComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrdersModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppFrameworkModule
   ],
   providers: [],
   bootstrap: [AppComponent]
