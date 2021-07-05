@@ -1,0 +1,11 @@
+<div class="row Show">
+  <div *ngFor="let blog of blog">
+    <div>
+      <p class="title">{{blog.title}}</p>
+      <p>
+        {{blog.content  }}
+      </p>
+      <span><b>Crée par :</b> {{blog.createdBy}}</span>
+    </div>
+  </div>
+</div>
