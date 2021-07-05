@@ -1,2 +1,34 @@
 <p>update-product works!</p>
-<h3 class="card-title">Product ID: {{ productId }}</h3>
+<h2 class="bg-light mb-2">Update Product</h2>
+<form (submit)="updateProduct(updateProductForm)" #updateProductForm="ngForm" >
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationServer01">Product Name</label>
+        <input type="text" class="form-control" required name="nom"  [(ngModel)]="productDetails.nom"  ngModel>
+      </div>
+    </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="validationServer02">Description</label>
+        <input type="text" class="form-control"  [(ngModel)]="productDetails.description" required name="description" ngModel>
+      </div>
+   
+      <div class="col-md-6 mb-3">
+        <label for="validationServer02">prix</label>
+        <input type="number" class="form-control"  [(ngModel)]="productDetails.prix" required name="prix" ngModel>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationServer03">Category</label>
+          <textarea type="text" class="form-control" [(ngModel)]="productDetails.Category" placeholder="Enter Product Description" required name="Category" ngModel >
+          </textarea>
+        </div>
+    </div> 
+
+
+     
+
+
+    <button class="btn btn-primary" type="submit">Update Product</button>
+  </form>

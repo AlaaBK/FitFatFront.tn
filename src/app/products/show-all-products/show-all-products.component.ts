@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./show-all-products.component.css']
 })
 export class ShowAllProductsComponent implements OnInit {
-//  public productList: any [] ;
-  //productList: Array<Product>= [] ;
+
   productList: Product[]=[] ;
   productId = 0;
   constructor(private productsService: ProductsService, private router:Router) { }

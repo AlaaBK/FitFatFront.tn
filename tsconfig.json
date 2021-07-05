@@ -3,6 +3,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "strictNullChecks":false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

@@ -9,7 +9,7 @@ import { ShowAllProductsComponent } from './show-all-products/show-all-products.
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { ShowAllProductsByCategoryComponent } from './show-all-products-by-category/show-all-products-by-category.component';
-
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,8 @@ import { ShowAllProductsByCategoryComponent } from './show-all-products-by-categ
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ProductsRoutingModule
   ]
 })
