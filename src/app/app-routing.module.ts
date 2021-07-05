@@ -24,7 +24,9 @@ const routes: Routes = [
   { path: 'category', loadChildren: () => import('./categories/category/category.module').then(m => m.CategoryModule) },
 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: 'categoryTable', loadChildren: () => import('./admin/category-table/category-table.module').then(m => m.CategoryTableModule) }
+  { path: 'categoryTable', loadChildren: () => import('./admin/category-table/category-table.module').then(m => m.CategoryTableModule) },
+
+  { path: 'user', loadChildren: () => import('./user/user.module').then(u => u.UserModule) }
 ];
 
 

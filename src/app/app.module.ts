@@ -18,22 +18,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { ProductTableComponent } from './admin/product-table/product-table.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+//import { UserComponent } from './user/user.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     ProductTableComponent,
-
     BlogsComponent,
     DeleteBlogComponent,
     EditBlogComponent,
     AdminBlogComponent,
     AddBlogComponent,
     NotFoundComponent,
-    ShowBlogComponent
+    ShowBlogComponent,
+    //UserComponent
 
   ],
   imports: [
