@@ -13,6 +13,10 @@ import {AdminBlogComponent} from "./Blog/admin-blog/admin-blog.component";
 import {EditBlogComponent} from "./Blog/edit-blog/edit-blog.component";
 import {DeleteBlogComponent} from "./Blog/delete-blog/delete-blog.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {AjouterRestaurantComponent} from "./Restaurant/ajouter-restaurant/ajouter-restaurant.component";
+import {ShowRestaurantComponent} from "./Restaurant/show-restaurant/show-restaurant.component";
+import {DeleteRestaurantComponent} from "./Restaurant/delete-restaurant/delete-restaurant.component";
+import {UpdateRestaurantComponent} from "./Restaurant/update-restaurant/update-restaurant.component";
 
 
 const routes: Routes = [
@@ -28,7 +32,12 @@ const routes: Routes = [
   { path: 'orders', component: ListOrdersComponent},
 
   { path: 'showAllRestaurant', component: ShowAllRestaurantComponent },
- // { path: 'restaurant', loadChildren: () => import('./restaurant/restaurant.module').then(r => r.RestaurantModule) }
+  { path: 'AjouterRestaurantComponent', component: AjouterRestaurantComponent },
+  { path: 'DeleteRestaurantComponent/:id', component: DeleteRestaurantComponent },
+  { path: 'ShowRestaurantComponent/:id', component: ShowRestaurantComponent },
+  { path: 'UpdateRestaurantComponent/:id', component: UpdateRestaurantComponent },
+
+  // { path: 'restaurant', loadChildren: () => import('./restaurant/restaurant.module').then(r => r.RestaurantModule) }
 
   { path: 'category', loadChildren: () => import('./categories/category/category.module').then(m => m.CategoryModule) },
 

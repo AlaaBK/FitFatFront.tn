@@ -17,13 +17,10 @@ import { AdminBlogComponent } from './Blog/admin-blog/admin-blog.component';
 import { AddBlogComponent } from './Blog/add-blog/add-blog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ShowBlogComponent } from './Blog/show-blog/show-blog.component';
-
-
-/*
 import { AjouterRestaurantComponent } from './Restaurant/ajouter-restaurant/ajouter-restaurant.component';
 import { ShowRestaurantComponent } from './Restaurant/show-restaurant/show-restaurant.component';
 import { DeleteRestaurantComponent } from './Restaurant/delete-restaurant/delete-restaurant.component';
-import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update-restaurant.component';*/
+import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update-restaurant.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,12 +31,11 @@ import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update
     AdminBlogComponent,
     AddBlogComponent,
     NotFoundComponent,
-    ShowBlogComponent
-   /*, AjouterRestaurantComponent,
+    ShowBlogComponent,
+    AjouterRestaurantComponent,
     ShowRestaurantComponent,
-
     DeleteRestaurantComponent,
-    UpdateRestaurantComponent*/],
+    UpdateRestaurantComponent],
 
 
   imports: [

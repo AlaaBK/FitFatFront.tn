@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Restaurant} from "../restaurant";
 import {RestaurantService} from "../restaurant.service";
 import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'app-ajouter-restaurant',
@@ -9,14 +10,23 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./ajouter-restaurant.component.css']
 })
 export class AjouterRestaurantComponent implements OnInit {
-  restaurantlist: Restaurant[]=[] ;
-  productId = 0;
 
-  constructor(private restaurantService: RestaurantService, private router:Router) { }
-
-  ngOnInit(): void  {
-    this.restaurantService.getAllRestaurants().subscribe( data =>
-    { this.restaurantlist = data['hydra:member'];
+  constructor(private formBuilder: FormBuilder, private restaurantService: RestaurantService, private router:Router) { }
+  addForm: FormGroup;
+  ngOnInit(): void {
+    this.addForm = this.formBuilder.group({
+      //id: [],
+      nom: ['', Validators.required],
+      description: ['', Validators.required],
+      adresse: [, Validators.required],
+      telephone: ['', Validators.required]
 
     });
+  }
+  onSubmit() {
+    this.restaurantService.addRestaurant(this.addForm.value)
+      .subscribe( data => {
+        console.log(data);
+        this.router.navigate(['']);
+      });
 }}

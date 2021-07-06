@@ -12,7 +12,7 @@ import {Restaurant} from "../restaurant";
 export class ShowAllRestaurantComponent implements OnInit {
 
   restaurantList: Restaurant[]=[] ;
-  //productId = 0;
+  //restoId = 0;
   constructor(private restaurantService: RestaurantService, private router:Router) { }
 
   ngOnInit(): void  {
