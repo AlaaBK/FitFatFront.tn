@@ -23,7 +23,8 @@ export class DeleteRestaurantComponent implements OnInit {
 
       this.restaurantsService.deleteRestaurant(this.restaurantId).subscribe(deleterestaurantdata => {{
         console.log('Deleted restaurant');
-        this.router.navigate(['/restaurants']);
+
+        this.router.navigate(['http://localhost:4200/showAllRestaurant']);
       }})
     });
   }

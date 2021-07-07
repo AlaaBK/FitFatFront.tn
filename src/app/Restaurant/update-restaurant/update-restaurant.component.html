@@ -1,10 +1,10 @@
-<p>update-restaurant works!</p>
+<p>**** vous etes sur de modifier ces informations? **** </p>
 <h2 class="bg-light mb-2">Update Restaurant</h2>
 <form (submit)="updateRestaurant(updateRestaurantForm)" #updateRestaurantForm="ngForm" >
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationServer01">Restaurant Name</label>
-      <input type="text" class="form-control" required name="nom"  [(ngModel)]="restaurantDetails.nom"  ngModel>
+      <input type="text" class="form-control"   [(ngModel)]="restaurantDetails.nom" required name="nom" ngModel>
     </div>
   </div>
 
@@ -15,13 +15,13 @@
 
   <div class="col-md-6 mb-3">
     <label for="validationServer02">adresse</label>
-    <input type="number" class="form-control"  [(ngModel)]="restaurantDetails.adresse" required name="adresse" ngModel>
+    <input type="text" class="form-control"  [(ngModel)]="restaurantDetails.adresse" required name="adresse" ngModel>
   </div>
 
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationServer03">telephone</label>
-      <textarea type="text" class="form-control" [(ngModel)]="restaurantDetails.telephone" placeholder="Enter restaurant Description" required name="telephone" ngModel >
+      <textarea type="number" class="form-control" [(ngModel)]="restaurantDetails.telephone" placeholder="Enter telephone du restaurant " required name="telephone" ngModel >
           </textarea>
     </div>
   </div>

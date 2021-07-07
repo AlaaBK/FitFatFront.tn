@@ -18,15 +18,15 @@ export class AjouterRestaurantComponent implements OnInit {
       //id: [],
       nom: ['', Validators.required],
       description: ['', Validators.required],
-      adresse: [, Validators.required],
-      telephone: ['', Validators.required]
+      adresse: ['', Validators.required],
+      telephone: [, Validators.required]
 
     });
   }
   onSubmit() {
-    this.restaurantService.addRestaurant(this.addForm.value)
+    this.restaurantService.ajouterRestaurant(this.addForm.value)
       .subscribe( data => {
         console.log(data);
-        this.router.navigate(['']);
+        this.router.navigate(['http://localhost:4200/showAllRestaurant']);
       });
 }}

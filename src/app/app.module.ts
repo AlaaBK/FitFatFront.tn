@@ -21,6 +21,8 @@ import { AjouterRestaurantComponent } from './Restaurant/ajouter-restaurant/ajou
 import { ShowRestaurantComponent } from './Restaurant/show-restaurant/show-restaurant.component';
 import { DeleteRestaurantComponent } from './Restaurant/delete-restaurant/delete-restaurant.component';
 import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update-restaurant.component';
+import {CommonModule} from "@angular/common";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update
 
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

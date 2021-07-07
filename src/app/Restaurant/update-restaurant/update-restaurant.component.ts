@@ -49,7 +49,7 @@ export class UpdateRestaurantComponent implements OnInit {
 
     this.restaurantService.updateRestaurant(this.restaurantId, updateRestaurant).subscribe(data => {
       console.log(data);
-      this.router.navigate(['/restaurants']);
+      this.router.navigate(['http://localhost:4200/showAllRestaurant']);
     });
 
   }

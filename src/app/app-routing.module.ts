@@ -12,7 +12,7 @@ import {ShowBlogComponent} from "./Blog/show-blog/show-blog.component";
 import {AdminBlogComponent} from "./Blog/admin-blog/admin-blog.component";
 import {EditBlogComponent} from "./Blog/edit-blog/edit-blog.component";
 import {DeleteBlogComponent} from "./Blog/delete-blog/delete-blog.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
+// import {NotFoundComponent} from "./not-found/not-found.component";
 import {AjouterRestaurantComponent} from "./Restaurant/ajouter-restaurant/ajouter-restaurant.component";
 import {ShowRestaurantComponent} from "./Restaurant/show-restaurant/show-restaurant.component";
 import {DeleteRestaurantComponent} from "./Restaurant/delete-restaurant/delete-restaurant.component";
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'admin-blog', component: AdminBlogComponent },
   { path: 'edit-blog/:id', component: EditBlogComponent  },
   { path: 'delete-blog/:id', component: DeleteBlogComponent  },
-  { path: '**', component: NotFoundComponent },
+ // { path: '**', component: NotFoundComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: 'orders', component: ListOrdersComponent},
 
