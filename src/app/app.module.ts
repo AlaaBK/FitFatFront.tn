@@ -54,3 +54,4 @@ import { CKEditorModule} from 'ng2-ckeditor';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
