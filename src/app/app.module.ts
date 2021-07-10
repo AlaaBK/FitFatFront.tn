@@ -14,12 +14,13 @@ import { ShowBlogComponent } from './blog/show-blog/show-blog.component';
 import { OrdersModule } from './orders/orders.module';
 import { AppFrameworkModule } from './app-framework/app-framework.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { ProductTableComponent } from './admin/product-table/product-table.component';
 import { MatTableModule } from '@angular/material/table';
-//import { UserComponent } from './user/user.component'
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -32,8 +33,7 @@ import { MatTableModule } from '@angular/material/table';
     AdminBlogComponent,
     AddBlogComponent,
     NotFoundComponent,
-    ShowBlogComponent,
-    //UserComponent
+    ShowBlogComponent
 
   ],
   imports: [
