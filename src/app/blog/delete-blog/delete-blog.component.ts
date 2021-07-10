@@ -14,9 +14,10 @@ export class DeleteBlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activatedroute.snapshot.params['id'];
-    this.BlogService.deleteBlog(this.id).subscribe();
-    setTimeout(() => {
-      this.router.navigate(['/admin-blog']);
-    }, 0);
+    this.BlogService.deleteBlog(this.id).subscribe( () => {
+      setTimeout(() => {
+        this.router.navigate(['/admin-blog']);
+      }, 0);
+      });
   }
 }

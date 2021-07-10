@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {BlogService} from "../blog.service";
 import {Router} from "@angular/router";
-import {Blog} from "../Model/blog";
+import { CKEditorComponent } from 'ng2-ckeditor';
 
 @Component({
   selector: 'app-add-blog',
@@ -10,18 +10,34 @@ import {Blog} from "../Model/blog";
 })
 export class AddBlogComponent implements OnInit {
   messageUser : string = "";
-  blog : Blog = new Blog("","","","");
+  ckeditorContent: string
+  ckeConfig: CKEDITOR.config
   constructor(private serviceBlog : BlogService, private router: Router) { }
-
+  @ViewChild("myckeditor") ckeditor: CKEditorComponent;
   ngOnInit(): void {
+    this.ckeConfig = {
+      allowedContent: false,
+      extraPlugins: 'divarea',
+      forcePasteAsPlainText: true,
+      removePlugins: 'exportpdf'
+    };
   }
   Save(form:any){
-    this.serviceBlog.addBlog(form).subscribe(()=>{
+    var content = CKEDITOR.instances.editor1.getSnapshot().replace(/<\/?[^>]+(>|$)/g, "")
+    let addedBlog = {
+      title : form.title,
+      createdBy : form.createdBy,
+      content : content,
+      publique : form.publique,
+    }
+
+    this.serviceBlog.addBlog(addedBlog).subscribe(()=>{
       this.messageUser = "Votre article à été bien enregistré, un administrateur va le consulter";
       setTimeout(() => {
         this.router.navigate(['/blogs']);
       }, 1500);
     });
   }
+
 
 }

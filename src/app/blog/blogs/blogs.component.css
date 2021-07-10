@@ -4,3 +4,5 @@
 .blogs .blogDiv .title{color: #20B2AA; font-size: 15px; font-weight: 500;}
 .blogs .blogDiv span{font-size: 12px; color: #000; text-decoration: underline;}
 .blogs .blogDiv a {color: #000  !important;    font-weight: 600;}
+
+.container span{display: inline-block}

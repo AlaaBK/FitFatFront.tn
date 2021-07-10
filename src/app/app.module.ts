@@ -19,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { ProductTableComponent } from './admin/product-table/product-table.component';
 import { MatTableModule } from '@angular/material/table'
-
+import { CKEditorModule} from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [
@@ -43,12 +43,12 @@ import { MatTableModule } from '@angular/material/table'
     HttpClientModule,
     OrdersModule,
     ReactiveFormsModule,
-    FormsModule,
     AppFrameworkModule,
     NgbModule,
     MatSliderModule,
     SidebarModule.forRoot(),
-    MatTableModule
+    MatTableModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,13 +9,23 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ShowBlogComponent implements OnInit {
   id :any;
-  blog :any;
+  blog: any[] = []
   constructor(private serviceBlog : BlogService,private activatedroute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id=this.activatedroute.snapshot.params['id'];
-    this.serviceBlog.getBlog(this.id).subscribe((result)=>{
-      this.blog= result;
+
+    this.activatedroute.params.subscribe(data => {
+      this.id = data.id;
+    });
+
+    this.serviceBlog.getBlog(this.id).subscribe(blogData => {
+      let copyBlog = {
+        title : blogData.title,
+        createdBy : blogData.createdBy,
+        content : blogData.content,
+        publique : blogData.publique,
+      }
+      this.blog.push(copyBlog);
     });
   }
 
