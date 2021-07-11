@@ -9,6 +9,7 @@ import {EditBlogComponent} from "./blog/edit-blog/edit-blog.component";
 import {DeleteBlogComponent} from "./blog/delete-blog/delete-blog.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
+
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
 
@@ -17,6 +18,12 @@ import {ShowAllProductsComponent} from './products/show-all-products/show-all-pr
 import { ShowAllProductsByCategoryComponent } from './products/show-all-products-by-category/show-all-products-by-category.component';
 import { DeleteProductComponent } from './products/delete-product/delete-product.component';
 import { UpdateProductComponent } from './products/update-product/update-product.component';
+
+import {ListUsersComponent} from "./user/list-users/list-users.component";
+import {DeleteuserComponent} from "./user/deleteuser/deleteuser.component";
+import {InscriptionComponent} from "./user/inscription/inscription.component";
+import {UpdateuserComponent} from "./user/updateuser/updateuser.component";
+
 const routes: Routes = [
   { path: '', component: HomeComponent  },
   { path: 'home', component: HomeComponent  },
@@ -34,17 +41,22 @@ const routes: Routes = [
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
   // { path: '**', component: NotFoundComponent },
+  { path: 'listusers', component: ListUsersComponent  },
+  { path: 'inscription', component: InscriptionComponent  },
+  { path: 'deleteuser/:id', component: DeleteuserComponent  },
+  { path: 'inscription', component: InscriptionComponent  },
+  { path: 'updateuser/:id', component: UpdateuserComponent  },
+  //{ path: 'profiluser/:id', component:  ProfiluserComponent },
+  // { path: '**', component: NotFoundComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: 'orders', component: ListOrdersComponent},
   { path: 'category', loadChildren: () => import('./categories/category/category.module').then(m => m.CategoryModule) },
 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: 'categoryTable', loadChildren: () => import('./admin/category-table/category-table.module').then(m => m.CategoryTableModule) }
+  { path: 'categoryTable', loadChildren: () => import('./admin/category-table/category-table.module').then(m => m.CategoryTableModule) },
+
+  { path: 'user', loadChildren: () => import('./user/user.module').then(u => u.UserModule) }
 ];
-
-
-
-
 
 
 @NgModule({

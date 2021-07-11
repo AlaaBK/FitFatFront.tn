@@ -4,16 +4,28 @@ import { ProductsComponent } from '../products/products.component';
 import { AdminComponent } from './admin.component';
 import { CategoryTableComponent } from './category-table/category-table.component';
 import { ProductTableComponent } from './product-table/product-table.component';
+import {AdminBlogComponent} from "../blog/admin-blog/admin-blog.component";
+import {EditBlogComponent} from "../blog/edit-blog/edit-blog.component";
+import {DeleteBlogComponent} from "../blog/delete-blog/delete-blog.component";
+import {AddBlogComponent} from "../blog/add-blog/add-blog.component";
+import {ShowBlogComponent} from "../blog/show-blog/show-blog.component";
+import {BlogsComponent} from "../blog/blogs/blogs.component";
 
 const routes: Routes = [
   { path: '', component: AdminComponent },
 
   { path: 'ProductTable', component: ProductTableComponent },
-  { path: 'CategoryTable', component: CategoryTableComponent }
+  { path: 'CategoryTable', component: CategoryTableComponent },
+  { path: 'admin-blog', component: AdminBlogComponent },
+  { path: 'edit-blog/:id', component: EditBlogComponent  },
+  { path: 'delete-blog/:id', component: DeleteBlogComponent  },
+  { path: 'add-blog', component: AddBlogComponent  },
+  { path: 'show-blog/:id', component: ShowBlogComponent },
+  { path: 'blogs', component: BlogsComponent  }
 
-  
-  ];
- 
+
+];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

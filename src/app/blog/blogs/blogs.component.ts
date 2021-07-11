@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogService} from "../blog.service";
+import {Blog} from "../Model/blog";
+import {Product} from "../../products/product";
 
 @Component({
   selector: 'app-blogs',
@@ -7,13 +9,13 @@ import {BlogService} from "../blog.service";
   styleUrls: ['./blogs.component.css']
 })
 export class BlogsComponent implements OnInit {
-  listeBlogs : any;
+  listeBlogs : Blog[]=[];
   constructor(private serviceBlog : BlogService) { }
 
   ngOnInit(): void {
     this.serviceBlog.getBlogs().subscribe((result)=>{
-      console.log("====> ", result)
-      this.listeBlogs= result;
+
+      this.listeBlogs= result['hydra:member'];
     });
   }
 }

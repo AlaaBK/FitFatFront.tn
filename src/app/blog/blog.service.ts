@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Blog} from "./Model/blog";
+import {Product} from "../products/product";
 
 @Injectable({
   providedIn: 'root'
@@ -8,28 +11,27 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBlogs(){
-    return this.http.get("http://localhost:3000/blog");
+  getAllBlogs() : Observable<Blog[]>{
+    return this.http.get<Blog[]>("http://127.0.0.1:8000/api/blogs");
   }
 
-  getBlogs(){
-    return this.http.get("http://localhost:3000/blog"  , { params: {publique: "yes"}});
+  getBlogs() : Observable<Blog[]>{
+    return this.http.get<Blog[]>("http://127.0.0.1:8000/api/blogs"  , { params: {publique: "yes"}});
   }
 
-  getBlog(id: any){
-    let param: any = {'id': id};
-    return this.http.get("http://localhost:3000/blog"  , {params: param});
+  getBlog(id: any) : Observable<Blog> {
+    return this.http.get<Blog>("http://127.0.0.1:8000/api/blogs/" + id);
   }
 
   addBlog(blog:any){
-    return this.http.post("http://localhost:3000/blog", blog);
+    return this.http.post("http://127.0.0.1:8000/api/blogs", blog, {responseType:'json'});
   }
 
-  deleteBlog(id: any){
-    return this.http.delete("http://localhost:3000/blog/" + id);
+  deleteBlog(id: any) : Observable<Blog>{
+    return this.http.delete<Blog>("http://127.0.0.1:8000/api/blogs/" + id );
   }
 
-  editBlog(blog: any, id:any){
-    return this.http.put("http://localhost:3000/blog/" + id, blog);
+  editBlog(blog: Blog, id:any) : Observable<Blog>{
+    return this.http.put<Blog>("http://127.0.0.1:8000/api/blogs/" + id, blog);
   }
 }

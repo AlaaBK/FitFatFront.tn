@@ -13,7 +13,7 @@ export class AdminBlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.serviceBlog.getAllBlogs().subscribe((result)=>{
-      this.listeBlogs= result;
+      this.listeBlogs= result['hydra:member'];
     });
   }
 }

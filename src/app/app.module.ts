@@ -18,10 +18,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { ProductTableComponent } from './admin/product-table/product-table.component';
-import { MatTableModule } from '@angular/material/table';
+ 
 import { HomeComponent } from './home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+
+import { MatTableModule } from '@angular/material/table'
+import { CKEditorModule} from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [
@@ -46,16 +49,19 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     OrdersModule,
     ReactiveFormsModule,
-    FormsModule,
     AppFrameworkModule,
     NgbModule,
     MatSliderModule,
     SidebarModule.forRoot(),
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+
+    
+    CKEditorModule
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
