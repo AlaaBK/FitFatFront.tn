@@ -9,15 +9,30 @@ import {EditBlogComponent} from "./blog/edit-blog/edit-blog.component";
 import {DeleteBlogComponent} from "./blog/delete-blog/delete-blog.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
+import { HomeComponent } from './home/home.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
 
+import {ShowProductComponent} from './products/show-product/show-product.component';
+import {ShowAllProductsComponent} from './products/show-all-products/show-all-products.component'
+import { ShowAllProductsByCategoryComponent } from './products/show-all-products-by-category/show-all-products-by-category.component';
+import { DeleteProductComponent } from './products/delete-product/delete-product.component';
+import { UpdateProductComponent } from './products/update-product/update-product.component';
 const routes: Routes = [
-
+  { path: '', component: HomeComponent  },
+  { path: 'home', component: HomeComponent  },
   { path: 'blogs', component: BlogsComponent  },
   { path: 'add-blog', component: AddBlogComponent  },
   { path: 'show-blog/:id', component: ShowBlogComponent },
   { path: 'admin-blog', component: AdminBlogComponent },
   { path: 'edit-blog/:id', component: EditBlogComponent  },
   { path: 'delete-blog/:id', component: DeleteBlogComponent  },
+
+  { path: 'addProduct', component: AddProductComponent },
+  { path: 'showProduct/:id', component: ShowProductComponent },
+  { path: 'showAllProducts', component: ShowAllProductsComponent },
+  // { path: 'category/:id', component: ShowAllProductsByCategoryComponent},
+  { path: 'delete-product/:id', component: DeleteProductComponent},
+  { path: 'update-product/:id', component: UpdateProductComponent},
   // { path: '**', component: NotFoundComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: 'orders', component: ListOrdersComponent},

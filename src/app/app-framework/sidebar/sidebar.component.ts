@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../products/products.service';
-import { Category } from '../category';
+import { Category } from 'src/app/categories/category';
+
 import { Router, RouterModule, Routes } from '@angular/router';
 @Component({
   selector: 'app-sidebar',
@@ -13,9 +14,9 @@ export class SidebarComponent implements OnInit {
   constructor(private productsService: ProductsService , private router : Router ) { }
 
   ngOnInit(): void {
-    // this.productsService.getCategories().subscribe(data => {
-    //   this.categoryList = data['hydra:member'];
-    // });
+    this.productsService.getCategories().subscribe(data => {
+      this.categoryList = data['hydra:member'];
+    });
   }
 
 }

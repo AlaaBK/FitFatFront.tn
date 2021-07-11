@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { APP_BASE_HREF } from '@angular/common';
 import { MatSliderModule } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,8 +18,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { ProductTableComponent } from './admin/product-table/product-table.component';
-import { MatTableModule } from '@angular/material/table'
-
+import { MatTableModule } from '@angular/material/table';
+import { HomeComponent } from './home/home.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MatTableModule } from '@angular/material/table'
     AdminBlogComponent,
     AddBlogComponent,
     NotFoundComponent,
-    ShowBlogComponent
+    ShowBlogComponent,
+    HomeComponent,
 
   ],
   imports: [
@@ -48,9 +51,11 @@ import { MatTableModule } from '@angular/material/table'
     NgbModule,
     MatSliderModule,
     SidebarModule.forRoot(),
+    MatIconModule,
+    MatButtonModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
