@@ -7,7 +7,8 @@ export interface Product {
     "nom": "string",
     "description": "string",
     prix: number,
-    "Category": "string"
+    "Category": "string",
+    "img": "string"
 
 }
 
