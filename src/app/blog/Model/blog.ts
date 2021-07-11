@@ -8,6 +8,7 @@ export interface Blog{
     "createdBy" : "string";
     "content" : "string";
     "publique" : "string";
+    "image" : "string";
 
 
 }

@@ -4,6 +4,8 @@ import {Observable} from "rxjs";
 import {Blog} from "./Model/blog";
 import {Product} from "../products/product";
 
+const URLcloud = 'https://api.cloudinary.com/v1_1/ddfpzl2ij/image/upload';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,5 +35,9 @@ export class BlogService {
 
   editBlog(blog: Blog, id:any) : Observable<Blog>{
     return this.http.put<Blog>("http://127.0.0.1:8000/api/blogs/" + id, blog);
+  }
+  uploadImageService(imageBody)
+  {
+    return this.http.post<Blog>(URLcloud,imageBody);
   }
 }
