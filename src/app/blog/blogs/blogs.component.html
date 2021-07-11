@@ -10,6 +10,14 @@
         {{blog.content }} <br> <a [routerLink]= "['/show-blog/', blog.id]" > <i class="fa fa-angle-double-right"></i> Voir plus</a>
       </p>
       <span>{{blog.createdBy}}</span>
+
     </div>
   </div>
+</div>
+<nav class="navbar">
+  <input class="form-control" type="text" name="firstName" [(ngModel)]="title" (ngModelChange)="rechercher()"
+         placeholder="Entrez le titre qui vous cherchez">
+</nav>
+<div class="top-header">
+  <a [routerLink]= "['/add-blog']" >Suggérer un nouveau blog</a>
 </div>

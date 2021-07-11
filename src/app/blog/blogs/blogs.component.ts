@@ -10,6 +10,7 @@ import {Product} from "../../products/product";
 })
 export class BlogsComponent implements OnInit {
   listeBlogs : Blog[]=[];
+  title;
   constructor(private serviceBlog : BlogService) { }
 
   ngOnInit(): void {
@@ -17,5 +18,14 @@ export class BlogsComponent implements OnInit {
 
       this.listeBlogs= result['hydra:member'];
     });
+  }
+  rechercher(){
+    if (this.title == ""){
+      this.ngOnInit();
+    } else {
+      this.listeBlogs = this.listeBlogs.filter(res => {
+        return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase());
+      });
+    }
   }
 }

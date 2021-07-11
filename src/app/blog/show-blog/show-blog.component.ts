@@ -24,6 +24,7 @@ export class ShowBlogComponent implements OnInit {
         createdBy : blogData.createdBy,
         content : blogData.content,
         publique : blogData.publique,
+        image : blogData.image
       }
       this.blog.push(copyBlog);
     });

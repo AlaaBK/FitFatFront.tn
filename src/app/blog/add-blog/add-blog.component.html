@@ -36,6 +36,18 @@
     <label>public</label>
     <input class="form-control" type="text" name="publique"  ngModel>
   </div>
+  <form [formGroup]="uploadForm"  class="was-validated">
+    <div class="mb-3">
+      <label  class="form-label">Image de blog</label>
+
+      <input type="file" class="form-control" aria-label="file example" name ="image" (change)="onFileSelected($event)" #fileUpload>
+
+      <div *ngIf="alertUpload" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Succés!</strong> image uploaded
+
+      </div>
+    </div>
+  </form>
   <button [disabled] = "blog.invalid" (click)="Save(blog.value)" class="btn btn-primary">Envoyer</button>
   <p class="message-user">{{messageUser}}</p>
 </form>
