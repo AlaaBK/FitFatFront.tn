@@ -22,6 +22,9 @@ import { ShowRestaurantComponent } from './Restaurant/show-restaurant/show-resta
 import { DeleteRestaurantComponent } from './Restaurant/delete-restaurant/delete-restaurant.component';
 import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update-restaurant.component';
 import {CommonModule} from "@angular/common";
+import { RechercheparadresseComponent } from './Restaurant/rechercheparadresse/rechercheparadresse.component';
+import { AdminRestaurantListComponent } from './Restaurant/admin-restaurant-list/admin-restaurant-list.component';
+import { ResponsableRestaurantViewComponent } from './Restaurant/responsable-restaurant-view/responsable-restaurant-view.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {CommonModule} from "@angular/common";
     AjouterRestaurantComponent,
     ShowRestaurantComponent,
     DeleteRestaurantComponent,
-    UpdateRestaurantComponent],
+    UpdateRestaurantComponent,
+    RechercheparadresseComponent,
+    AdminRestaurantListComponent,
+    ResponsableRestaurantViewComponent],
 
 
   imports: [

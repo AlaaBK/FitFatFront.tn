@@ -1,0 +1,23 @@
+<p>rechercheparadresse works!{{restaurantadresse}}</p>
+
+<h2>showing results {{restaurantadresse}}</h2>
+<div class="row">
+  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let restaurant of restaurantList">
+    <div class="card h-100">
+      <div *ngIf="restaurant.adresse== restaurantadresse;else elseBlock">
+      <a href="#"><img class="card-img-top" src="{{restaurant.nom}}" alt=""></a>
+      <div class="card-body">
+        <h3>{{ restaurant.id }}</h3>
+        <h4 class="card-title">
+          <a routerLink="ShowRestaurantComponent/{{restaurant.id}}">{{ restaurant.nom }}</a>
+        </h4>
+        <h5>{{ restaurant.adresse }}</h5>
+        <p class="card-text">{{ restaurant.description}}</p>
+        <h6>Numéro de telephone:  {{ restaurant.telephone }}</h6>
+
+      </div>
+
+    </div></div>
+  </div>
+  <ng-template #elseBlock>**** aucun restaurant se trouve sur cet adresse</ng-template>
+</div>
