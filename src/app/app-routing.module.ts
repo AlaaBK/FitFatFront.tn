@@ -20,6 +20,8 @@ import {UpdateRestaurantComponent} from "./Restaurant/update-restaurant/update-r
 import {RechercheparadresseComponent} from "./Restaurant/rechercheparadresse/rechercheparadresse.component";
 import {AdminRestaurantListComponent} from "./Restaurant/admin-restaurant-list/admin-restaurant-list.component";
 import {ResponsableRestaurantViewComponent} from "./Restaurant/responsable-restaurant-view/responsable-restaurant-view.component";
+import {GetRestaurantbyAdresseComponent} from "./Restaurant/get-restaurantby-adresse/get-restaurantby-adresse.component";
+import {GetRestaurantbyNomComponent} from "./Restaurant/get-restaurantby-nom/get-restaurantby-nom.component";
 
 
 const routes: Routes = [
@@ -42,6 +44,8 @@ const routes: Routes = [
   { path: 'recherche/:adresse', component: RechercheparadresseComponent },
   { path: 'AdminRestaurantList', component: AdminRestaurantListComponent},
   { path: 'ResponsableRestaurant/:id', component: ResponsableRestaurantViewComponent },
+  { path: 'GetRestaurantbyAdresse/:adresse', component: GetRestaurantbyAdresseComponent },
+  { path: 'GetRestaurantbyNom/:nom', component: GetRestaurantbyNomComponent },
 
   // { path: 'restaurant', loadChildren: () => import('./restaurant/restaurant.module').then(r => r.RestaurantModule) }
 

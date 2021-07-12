@@ -36,8 +36,12 @@ export class RestaurantService {
     const restauranturl = 'http://127.0.0.1:8000/api/restaurants/' + restaurantID;
     return this.httpClient.delete<Restaurant>(restauranturl); // return an observable
   }
-
-
+  getRestaurantbyAdresse(adresseRe): Observable<Restaurant[]>{
+    return this.httpClient.get<Restaurant[]>('http://127.0.0.1:8000/api/restaurants'  , { params: {adresse: adresseRe}});
+  }
+  getRestaurantbyNom(NomRe): Observable<Restaurant[]>{
+    return this.httpClient.get<Restaurant[]>('http://127.0.0.1:8000/api/restaurants'  , { params: {nom: NomRe}});
+  }
 
 
 

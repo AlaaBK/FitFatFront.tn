@@ -25,6 +25,8 @@ import {CommonModule} from "@angular/common";
 import { RechercheparadresseComponent } from './Restaurant/rechercheparadresse/rechercheparadresse.component';
 import { AdminRestaurantListComponent } from './Restaurant/admin-restaurant-list/admin-restaurant-list.component';
 import { ResponsableRestaurantViewComponent } from './Restaurant/responsable-restaurant-view/responsable-restaurant-view.component';
+import { GetRestaurantbyAdresseComponent } from './Restaurant/get-restaurantby-adresse/get-restaurantby-adresse.component';
+import { GetRestaurantbyNomComponent } from './Restaurant/get-restaurantby-nom/get-restaurantby-nom.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ResponsableRestaurantViewComponent } from './Restaurant/responsable-res
     UpdateRestaurantComponent,
     RechercheparadresseComponent,
     AdminRestaurantListComponent,
-    ResponsableRestaurantViewComponent],
+    ResponsableRestaurantViewComponent,
+    GetRestaurantbyAdresseComponent,
+    GetRestaurantbyNomComponent],
 
 
   imports: [
