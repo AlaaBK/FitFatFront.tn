@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RestaurantService} from "../restaurant.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Restaurant} from "../restaurant";
 
 @Component({
   selector: 'app-get-restaurantby-adresse',
@@ -8,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./get-restaurantby-adresse.component.css']
 })
 export class GetRestaurantbyAdresseComponent implements OnInit {
-  Restaurantlist : any;
+  Restaurantlist :Restaurant[]=[] ;
   restaurantadresse : any;
   constructor(private activatedRoute: ActivatedRoute,
               private restaurantsService: RestaurantService,
@@ -22,8 +23,8 @@ export class GetRestaurantbyAdresseComponent implements OnInit {
     });
     this.restaurantsService.getRestaurantbyAdresse(this.restaurantadresse).subscribe((result)=>{
 
-      this.Restaurantlist= result
-      console.log("====> ", result);
+      this.Restaurantlist= result['hydra:member'];
+     // console.log("====> ", result);
     });
   }
 

@@ -11,7 +11,7 @@ import {Restaurant} from "../restaurant";
 })
 export class UpdateRestaurantComponent implements OnInit {
 
-  restaurantId : number;
+  restaurantId : any;
 
   restaurantDetails: Restaurant;
   editForm: FormGroup;
@@ -28,12 +28,12 @@ export class UpdateRestaurantComponent implements OnInit {
 
       this.restaurantService.ShowRestaurant(this.restaurantId).subscribe(restaurantData => {
         this.restaurantDetails = restaurantData; // get the existing data of the Restaurant
-        console.log(this.restaurantDetails);
+       // console.log(this.restaurantDetails);
       });
 
     });
   }
-
+/*
   updateRestaurant(form){
 
     console.log(form);
@@ -47,11 +47,20 @@ export class UpdateRestaurantComponent implements OnInit {
 
     };
 
-    this.restaurantService.updateRestaurant(this.restaurantId, updateRestaurant).subscribe(data => {
+    this.restaurantService.updateRestaurant( updateRestaurant.id , updateRestaurant).subscribe(data => {
       console.log(data);
-      this.router.navigate(['http://localhost:4200/showAllRestaurant']);
+      this.router.navigate(['/showAllRestaurant']);
+    });}
+*/
+  updateRestaurant(form){
+    //this.serviceBlog.editBlog( this.restaurantDetails , this.restaurantId ).subscribe();
+   // this.messageUser = "Article modifié avec succées !";
+    this.restaurantService.updateRestaurant(this.restaurantId , this.restaurantDetails).subscribe(data => {
+     // this.messageUser = "Article modifié avec succées !";
+      setTimeout(() => {
+        this.router.navigate(['/showAllRestaurant']);
+      }, 1500);
     });
-
   }
 
 }

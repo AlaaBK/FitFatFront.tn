@@ -27,8 +27,8 @@ export class RestaurantService {
     return this.httpClient.post(this.restauranturl, Restaurant, {responseType: 'json'});
   }
 
-  updateRestaurant(restaurantID, restaurantBody): Observable<Restaurant>{
-    const restauranturl = 'http://127.0.0.1:8000/api/restaurants/'+ restaurantID;
+  updateRestaurant(restaurantID, restaurantBody ): Observable<Restaurant>{
+    const restauranturl = 'http://127.0.0.1:8000/api/restaurants/'+restaurantID;
     return this.httpClient.put<Restaurant>(restauranturl, restaurantBody); // return an observable
   }
 
