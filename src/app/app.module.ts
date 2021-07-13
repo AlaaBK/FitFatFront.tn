@@ -19,7 +19,7 @@ import { DeleteRestaurantComponent } from './Restaurant/delete-restaurant/delete
 import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update-restaurant.component';
 import {CommonModule} from "@angular/common";
 import { RechercheparadresseComponent } from './Restaurant/rechercheparadresse/rechercheparadresse.component';
-import { AdminRestaurantListComponent } from './Restaurant/admin-restaurant-list/admin-restaurant-list.component';
+import { AdminRestaurantListComponent } from './admin/admin-restaurant-list/admin-restaurant-list.component';
 import { ResponsableRestaurantViewComponent } from './Restaurant/responsable-restaurant-view/responsable-restaurant-view.component';
 import { GetRestaurantbyAdresseComponent } from './Restaurant/get-restaurantby-adresse/get-restaurantby-adresse.component';
 import { GetRestaurantbyNomComponent } from './Restaurant/get-restaurantby-nom/get-restaurantby-nom.component';
