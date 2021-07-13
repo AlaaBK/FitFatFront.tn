@@ -1,0 +1,15 @@
+<div class="row blogs">
+  <div *ngFor="let blog of listeBlogs;let last = last" class="col-md-4" >
+    <div class="blogDiv">
+      <div class="container ">
+        <span class="title">{{blog.title}}</span>
+        <span class="fa fa-star" [ngStyle]="{'color': 'orange','margin-inline':'80px'}" *ngIf="last"></span>
+      </div>
+      <br>
+      <p>
+        {{blog.content }} <br> <a [routerLink]= "['/show-blog/', blog.id]" > <i class="fa fa-angle-double-right"></i> Voir plus</a>
+      </p>
+      <span>{{blog.createdBy}}</span>
+    </div>
+  </div>
+</div>

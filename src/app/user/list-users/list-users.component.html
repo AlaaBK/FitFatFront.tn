@@ -1,0 +1,31 @@
+<div class="container" >
+<h1 style="text-align: center;" class="myClass">liste des users</h1>
+
+
+<table  border="2" class=" myClass table table-hover border-primary">
+  <tr style="color: blue; text-align: center; text-transform: uppercase; font-weight:bold;" >
+    <td >id</td>
+    <td >username</td>
+    <td >name</td>
+    <td >Email</td>
+    <td >Role</td>
+    <td >Actions</td>
+  </tr>
+  <tr *ngFor="let user of userList"  >
+
+    <td style="text-align: center" >{{user.id }}</td>
+    <td style="text-align: center">{{user.username }}</td>
+    <td style="text-align: center" >{{user.name }}</td>
+    <td style="text-align: center" >{{user.email }}</td>
+    <td style="text-align: center" >{{user.roles}}</td>
+
+    <td style="text-align: center">
+      <button type="submit"  [routerLink]= "['/updateuser/', user.id]">Modifier</button>
+      <button type="submit"  [routerLink]= "['/deleteuser/', user.id]">Supprimer</button>
+      <button type="submit"  [routerLink]= "['/bloqueruser/', user.id]">Bloquer</button>
+
+    </td>
+
+  </tr>
+</table>
+</div>
