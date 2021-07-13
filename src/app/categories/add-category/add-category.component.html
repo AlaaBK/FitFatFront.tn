@@ -4,9 +4,9 @@
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
        
         <div class="form-group">
-        <label for="nom">Nom:</label>
-        <input type="text" formControlName="nom" placeholder="nom" name="nom" class="form-control" id="nom">
+        <label for="nom">Category Name</label>
+        <input type="text" formControlName="nom" placeholder="Add Category Name" name="nom" class="form-control" id="nom">
       </div>
   
-      <button class="btn btn-success">Create</button>
+      <button class="btn btn-success">Submit</button>
     </form>

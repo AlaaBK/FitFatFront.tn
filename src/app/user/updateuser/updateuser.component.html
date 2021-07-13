@@ -1,0 +1,26 @@
+
+<p>update-user works!</p>
+<h2 class="bg-light mb-2">Update USer</h2>
+<form (submit)="updateUser(updateUserForm)" #updateUserForm="ngForm" >
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label>Username</label>
+      <input type="text" class="form-control" required name="username"  [(ngModel)]="userDetails.username"  ngModel>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label>Name</label>
+    <input type="text" class="form-control"  [(ngModel)]="userDetails.name" required name="name" ngModel>
+  </div>
+
+
+  <div class="form-row">
+    <label >E-mail</label>
+      <input type="text" class="form-control" [(ngModel)]="userDetails.email"  required name="user" ngModel >
+  </div>
+
+
+  <button class="btn btn-primary" type="submit">Update User</button>
+</form>
+
