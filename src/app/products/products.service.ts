@@ -45,14 +45,14 @@ export class ProductsService {
     return this.httpClient.delete<Product>(productUrl); // return an observable
   }
 
-  public uploadImage(image: File): any {
-    const formData = new FormData();
+  // public uploadImage(image: File): any {
+  //   const formData = new FormData();
 
-    formData.append('image', image);
+  //   formData.append('image', image);
 
-    return this.httpClient.post('http://127.0.0.1:8000/api/products', formData);
-    console.log(formData);
-  }
+  //   return this.httpClient.post('http://127.0.0.1:8000/api/products', formData);
+  //   console.log(formData);
+  // }
 
 
 }
