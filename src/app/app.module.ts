@@ -18,13 +18,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { ProductTableComponent } from './admin/product-table/product-table.component';
- 
+
 import { HomeComponent } from './home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
 import { MatTableModule } from '@angular/material/table'
 import { CKEditorModule} from 'ng2-ckeditor';
+import { AddCommentComponent } from './blog/add-comment/add-comment.component';
+import { DeleteCommentComponent } from './blog/delete-comment/delete-comment.component';
+import { AdminCommentComponent } from './blog/admin-comment/admin-comment.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { CKEditorModule} from 'ng2-ckeditor';
     NotFoundComponent,
     ShowBlogComponent,
     HomeComponent,
+    AddCommentComponent,
+    DeleteCommentComponent,
+    AdminCommentComponent,
 
   ],
   imports: [
@@ -57,7 +63,7 @@ import { CKEditorModule} from 'ng2-ckeditor';
     MatButtonModule,
     MatTableModule,
 
-    
+
     CKEditorModule
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '' }],

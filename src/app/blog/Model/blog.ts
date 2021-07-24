@@ -3,6 +3,7 @@ export interface Blog{
   "@id": "string",
   "@type": "string",
   flash: boolean,
+  commentaires : any[],
   id: number,
     "title" : "string";
     "createdBy" : "string";

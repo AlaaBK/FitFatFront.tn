@@ -23,6 +23,8 @@ import {ListUsersComponent} from "./user/list-users/list-users.component";
 import {DeleteuserComponent} from "./user/deleteuser/deleteuser.component";
 import {InscriptionComponent} from "./user/inscription/inscription.component";
 import {UpdateuserComponent} from "./user/updateuser/updateuser.component";
+import {DeleteCommentComponent} from "./blog/delete-comment/delete-comment.component";
+import {AdminCommentComponent} from "./blog/admin-comment/admin-comment.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -33,6 +35,10 @@ const routes: Routes = [
   { path: 'admin-blog', component: AdminBlogComponent },
   { path: 'edit-blog/:id', component: EditBlogComponent  },
   { path: 'delete-blog/:id', component: DeleteBlogComponent  },
+  { path: 'delete-blog/:id', component: DeleteBlogComponent  },
+  { path: 'admin-comment', component: AdminCommentComponent },
+  { path: 'delete-comment/:id', component: DeleteCommentComponent },
+
 
   { path: 'addProduct', component: AddProductComponent },
   { path: 'showProduct/:id', component: ShowProductComponent },

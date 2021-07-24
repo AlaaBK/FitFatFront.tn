@@ -10,6 +10,7 @@ import {DeleteBlogComponent} from "../blog/delete-blog/delete-blog.component";
 import {AddBlogComponent} from "../blog/add-blog/add-blog.component";
 import {ShowBlogComponent} from "../blog/show-blog/show-blog.component";
 import {BlogsComponent} from "../blog/blogs/blogs.component";
+import {AdminCommentComponent} from "../blog/admin-comment/admin-comment.component";
 
 const routes: Routes = [
   { path: '', component: AdminComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'ProductTable', component: ProductTableComponent },
   { path: 'CategoryTable', component: CategoryTableComponent },
   { path: 'admin-blog', component: AdminBlogComponent },
+  { path: 'admin-comment', component: AdminCommentComponent },
   { path: 'edit-blog/:id', component: EditBlogComponent  },
   { path: 'delete-blog/:id', component: DeleteBlogComponent  },
   { path: 'add-blog', component: AddBlogComponent  },

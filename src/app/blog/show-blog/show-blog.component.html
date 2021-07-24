@@ -1,5 +1,5 @@
 <div class="row Show">
-  <div *ngFor="let blog of blog">
+  <div *ngFor="let blog of blogs">
     <div>
       <p class="title">{{blog.title}}</p>
       <p>
@@ -12,3 +12,7 @@
     </div>
   </div>
 </div>
+<app-add-comment [commentsNumber] = commentsNumber
+                 [comments]="comments"
+                 (ajouterCommentaire)="ajouterCommentaire($event)">
+</app-add-comment>

@@ -6,3 +6,9 @@
 .blogs .blogDiv a {color: #000  !important;    font-weight: 600;}
 
 .container span{display: inline-block}
+.navbar{width: 88%; margin: 20px; margin-top: 30px;}
+
+.top-header{text-align: right; padding-right:7.5%; margin-top:10px}
+.top-header a {font-size: 14px; margin-left: 15px;   color: #28cac1; font-weight: 500;}
+.top-header a:hover{color: #20B2AA;}
+
