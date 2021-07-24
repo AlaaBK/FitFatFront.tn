@@ -41,6 +41,9 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { MatTableModule } from '@angular/material/table'
 import { CKEditorModule} from 'ng2-ckeditor';
+import { AddCommentComponent } from './blog/add-comment/add-comment.component';
+import { DeleteCommentComponent } from './blog/delete-comment/delete-comment.component';
+import { AdminCommentComponent } from './blog/admin-comment/admin-comment.component';
 
 
 @NgModule({
@@ -63,14 +66,19 @@ import { CKEditorModule} from 'ng2-ckeditor';
     AjouterRestaurantComponent,
     ShowRestaurantComponent,
     HomeComponent,
+
     DeleteRestaurantComponent,
     UpdateRestaurantComponent,
     AdminRestaurantListComponent,
     ResponsableRestaurantViewComponent,
     GetRestaurantbyAdresseComponent,
-    GetRestaurantbyNomComponent],
+    GetRestaurantbyNomComponent,
 
 
+
+    AddCommentComponent,
+    DeleteCommentComponent,
+    AdminCommentComponent],
 
 
   imports: [

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Blog} from "./Model/blog";
-import {Product} from "../products/product";
 
 const URLcloud = 'https://api.cloudinary.com/v1_1/ddfpzl2ij/image/upload';
 
