@@ -37,25 +37,25 @@ export class AddProductComponent implements OnInit {
         });
     }
 
-    processFile(imageInput: any) {
-      const file: File = imageInput.files[0];
-      const reader = new FileReader();
+    // processFile(imageInput: any) {
+    //   const file: File = imageInput.files[0];
+    //   const reader = new FileReader();
   
-      reader.addEventListener('load', (event: any) => {
+    //   reader.addEventListener('load', (event: any) => {
   
-        this.selectedFile = new ImageSnippet(event.target.result, file);
+    //     this.selectedFile = new ImageSnippet(event.target.result, file);
   
-        this.productsService.uploadImage(this.selectedFile.file).subscribe(
-          (res) => {
+    //     this.productsService.uploadImage(this.selectedFile.file).subscribe(
+    //       (res) => {
           
-          },
-          (err) => {
+    //       },
+    //       (err) => {
           
-          })
-      });
+    //       })
+    //   });
   
-      reader.readAsDataURL(file);
-    }
+    //   reader.readAsDataURL(file);
+    // }
   
 
 }

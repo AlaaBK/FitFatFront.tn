@@ -14,13 +14,13 @@ export class ShowAllProductsComponent implements OnInit {
   constructor(private productsService: ProductsService, private router:Router) { }
 
   ngOnInit(): void  {
-    this.productsService.getAllProducts().subscribe( data => 
+    this.productsService.getAllProducts().subscribe( data =>
       { this.productList = data['hydra:member'];
-      
+
   });
 
 
-  
+
   }
 
 }
