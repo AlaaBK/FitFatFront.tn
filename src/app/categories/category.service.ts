@@ -37,5 +37,10 @@ export class CategoryService {
     return this.httpClient.delete<Category>(CategorytUrl); // return an observable
   }
 
+  getCategoryByNom(nomCat): Observable<Category[]>{
+    const CategorytUrl = 'http://127.0.0.1:8000/api/categories/';
+    return this.httpClient.get<Category[]>(CategorytUrl , { params: {nom: nomCat}}); // return an observable
+  }
+
 
 }

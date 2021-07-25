@@ -13,11 +13,9 @@ const routes: Routes = [
   { path: 'addProduct', component: AddProductComponent },
   { path: 'showProduct/:id', component: ShowProductComponent },
   { path: 'showAllProducts', component: ShowAllProductsComponent },
-  { path: 'category/:id', component: ShowAllProductsByCategoryComponent},
+  { path: 'productCategory/:nom', component: ShowAllProductsByCategoryComponent},
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
-
-
 
 ];
 

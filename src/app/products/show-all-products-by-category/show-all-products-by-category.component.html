@@ -1,4 +1,23 @@
-<h3>Product Category: {{ searchCategory }}</h3>
+<div class="row">
+   <div class="col-lg-4 col-md-6 mb-4" *ngFor="let Category of categoryList">
+       
+      <a href="#"><img class="card-img-top" src="{{Category.nom}}" alt=""></a>
+      <div class="card-body">
+       
+        <h4 class="card-title">
+          <a routerLink="productCategory/{{Category.nom}}">{{ Category.nom }}</a>
+         <a routerLink="productCategory/{{Category.nom}}">{{ Category.id }}</a>
 
+        </h4>
 
-<p>show-all-products-by-category works!</p>
+        
+
+      <!-- </div> -->
+
+    </div>
+  </div>
+
+  <div class="card h-100"*ngFor="let product of productList"> 
+    <h3>{{ product.id }}</h3>  
+
+</div>

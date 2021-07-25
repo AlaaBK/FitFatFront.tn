@@ -20,10 +20,12 @@ export class ProductsService {
     const categoriesUrl = 'http://127.0.0.1:8000/api/categories';
     return this.httpClient.get<Category>(categoriesUrl);
   }
-  searchCategoryProducts(Category): Observable<Product>{
-    const productUrl = 'http://127.0.0.1:8000/api/products'+Category;
-    return this.httpClient.get<Product>(productUrl); // return an observable
+  
+  searchProductsByCategory(CategoryId): Observable<Product[]>{
+    const productUrl = 'http://127.0.0.1:8000/api/products';
+    return this.httpClient.get<Product[]>(productUrl , { params: {Category: CategoryId}}); 
   }
+
 
   ShowProduct(productId): Observable<Product>{
     const productUrl = 'http://127.0.0.1:8000/api/products/'+ productId;
