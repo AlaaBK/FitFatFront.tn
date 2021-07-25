@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
-
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
 import {ShowAllRestaurantComponent} from "./Restaurant/show-all-restaurant/show-all-restaurant.component";
-
-
-
 import {BlogsComponent} from "./blog/blogs/blogs.component";
 import {AddBlogComponent} from "./blog/add-blog/add-blog.component";
 import {ShowBlogComponent} from "./blog/show-blog/show-blog.component";
@@ -24,13 +18,12 @@ import {ResponsableRestaurantViewComponent} from "./Restaurant/responsable-resta
 import {GetRestaurantbyAdresseComponent} from "./Restaurant/get-restaurantby-adresse/get-restaurantby-adresse.component";
 import {GetRestaurantbyNomComponent} from "./Restaurant/get-restaurantby-nom/get-restaurantby-nom.component";
 
-
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
 
 import {ShowProductComponent} from './products/show-product/show-product.component';
 import {ShowAllProductsComponent} from './products/show-all-products/show-all-products.component'
-import { ShowAllProductsByCategoryComponent } from './products/show-all-products-by-category/show-all-products-by-category.component';
+// import { ShowAllProductsByCategoryComponent } from './products/show-all-products-by-category/show-all-products-by-category.component';
 import { DeleteProductComponent } from './products/delete-product/delete-product.component';
 import { UpdateProductComponent } from './products/update-product/update-product.component';
 
@@ -53,7 +46,7 @@ const routes: Routes = [
   { path: 'addProduct', component: AddProductComponent },
   { path: 'showProduct/:id', component: ShowProductComponent },
   { path: 'showAllProducts', component: ShowAllProductsComponent },
-  // { path: 'category/:id', component: ShowAllProductsByCategoryComponent},
+  // { path: 'category/:Category', component: ShowAllProductsByCategoryComponent},
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
   { path: 'listusers', component: ListUsersComponent  },

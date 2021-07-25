@@ -88,6 +88,8 @@ import { CKEditorModule} from 'ng2-ckeditor';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
+    
+    
 
 
     CKEditorModule
