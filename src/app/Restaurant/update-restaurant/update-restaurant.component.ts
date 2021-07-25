@@ -15,6 +15,7 @@ export class UpdateRestaurantComponent implements OnInit {
 
   restaurantDetails: Restaurant;
   editForm: FormGroup;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
@@ -28,12 +29,12 @@ export class UpdateRestaurantComponent implements OnInit {
 
       this.restaurantService.ShowRestaurant(this.restaurantId).subscribe(restaurantData => {
         this.restaurantDetails = restaurantData; // get the existing data of the Restaurant
-       // console.log(this.restaurantDetails);
+        console.log(this.restaurantDetails);
       });
 
     });
   }
-/*
+
   updateRestaurant(form){
 
     console.log(form);
@@ -43,16 +44,17 @@ export class UpdateRestaurantComponent implements OnInit {
       nom: form.value.nom,
       description: form.value.description,
       adresse: form.value.adresse,
-      telephone: form.value.telephone
+      telephone: form.value.telephone,
+      image: form.value.image,
 
     };
 
-    this.restaurantService.updateRestaurant( updateRestaurant.id , updateRestaurant).subscribe(data => {
+    this.restaurantService.updateRestaurant( this.restaurantId , updateRestaurant).subscribe(data => {
       console.log(data);
       this.router.navigate(['/showAllRestaurant']);
     });}
-*/
-  updateRestaurant(form){
+
+  /* updateRestaurant(form){
     //this.serviceBlog.editBlog( this.restaurantDetails , this.restaurantId ).subscribe();
    // this.messageUser = "Article modifié avec succées !";
     this.restaurantService.updateRestaurant(this.restaurantId , this.restaurantDetails).subscribe(data => {
@@ -61,6 +63,6 @@ export class UpdateRestaurantComponent implements OnInit {
         this.router.navigate(['/showAllRestaurant']);
       }, 1500);
     });
-  }
+  }*/
 
 }

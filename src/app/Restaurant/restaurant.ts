@@ -7,5 +7,6 @@ export interface Restaurant {
   "nom": "string",
   "description": "string",
   "adresse": "string",
-  "telephone": "string"
+  "telephone": "string",
+  "image" : "string"
 }
