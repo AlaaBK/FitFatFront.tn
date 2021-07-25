@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Animated Sidebar Menu | CodingLab</title>
-      <link rel="stylesheet" href="category-table.component.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   </head>
 
-<h2></h2>
-<h3></h3>
-<p>Mis à jour : {{ lastUpdate | date: 'short'  }}</p>
+<p>Last Update : {{ lastUpdate | date: 'short'  }}</p>
 
-
+<!-- 
 
 <table class="table table-hover">
   
@@ -34,9 +23,35 @@
           <li><a routerLink="/category/delete-category/{{category.id}}"><i class="fa fa-trash"style="font-size:24px;color:red"></i></a></li>
           <li><a routerLink="/category/update-category/{{category.id}}"><i class="fa fa-edit" style="font-size:24px"></i></a></li>
           
-          <!-- <td><i class="fas fa-plus" style="font-size:24px;color:green"></i><i class="fa fa-edit" style="font-size:24px"></i> <i class="fa fa-trash"style="font-size:24px;color:red"></i></td> -->
+           <td><i class="fas fa-plus" style="font-size:24px;color:green"></i><i class="fa fa-edit" style="font-size:24px"></i> <i class="fa fa-trash"style="font-size:24px;color:red"></i></td> -->
         
-      </tr>
+      <!-- </tr>
   
   </tbody>
-</table> 
+</table>  -->
+
+
+
+<li><a routerLink="/category/addCategory"><i class="fa fa-plus" style="font-size:24px"> Add New Category</i></a></li>
+
+
+<table style="width:100%">
+    <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Settings</th>
+
+    </tr>
+    <tr *ngFor="let category of CategoryList">
+
+        <td>{{category.id}}</td>
+        <td>{{category.nom}}</td>
+        <td><li><a routerLink="/category/delete-category/{{category.id}}"><i class="fa fa-trash"style="font-size:24px;color:red"></i></a></li>
+        <li><a routerLink="/category/update-category/{{category.id}}"><i class="fa fa-edit" style="font-size:24px"></i></a></li></td>
+
+    </tr>
+    
+  </table>
+
+  
+  

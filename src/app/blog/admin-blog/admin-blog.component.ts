@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogService} from "../blog.service";
+import {Blog} from "../Model/blog";
 
 @Component({
   selector: 'app-admin-blog',
@@ -9,6 +10,7 @@ import {BlogService} from "../blog.service";
 export class AdminBlogComponent implements OnInit {
 
   listeBlogs:any;
+
   constructor(private serviceBlog : BlogService) { }
 
   ngOnInit(): void {
@@ -16,4 +18,6 @@ export class AdminBlogComponent implements OnInit {
       this.listeBlogs= result['hydra:member'];
     });
   }
+
+
 }

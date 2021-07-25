@@ -43,7 +43,8 @@ export class UpdateProductComponent implements OnInit {
       nom: form.value.nom,
       description: form.value.description,
       prix: form.value.prix,
-      Category: form.value.Category
+      Category: form.value.Category,
+      img: form.value.img,
 
   };
 

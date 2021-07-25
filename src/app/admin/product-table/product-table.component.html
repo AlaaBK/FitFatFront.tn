@@ -1,37 +1,29 @@
-<h2></h2>
-<h3></h3>
-<p>Mis à jour : {{ lastUpdate | date: 'short'  }}</p>
+
+<p> Last Update : {{ lastUpdate | date: 'short'  }}</p>
+
+<!-- <button style="font-size:24px">ADD New Product <li><a routerLink="/products/addProduct"></a><i class="fa fa-plus"></i></li></button> -->
+
+<li><a routerLink="/products/addProduct"><i class="fa fa-plus" style="font-size:24px"> Add New Product</i></a></li>
 
 
+<table style="width:100%">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Settings</th> 
+    </tr>
+    <tr *ngFor="let product of productList">
+        <td>{{product.id}}</td>
+        <td>{{product.nom}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.prix}}</td>
+        <td>{{product.img}}</td>
+        <td><li><a routerLink="/products/delete-product/{{product.id}}"><i class="fa fa-trash"style="font-size:24px;color:red"></i></a></li>
+        <li><a routerLink="/products/update-product/{{product.id}}"><i class="fa fa-edit" style="font-size:24px"></i></a></li></td>
 
-<table class="table table-hover">
-  
-  <thead>
-      <tr>
-        
-          <th>Id</th>
-          <th>Nom</th>
-          <th>Description</th>
-          <th>Prix</th>
-          <th>Products Settings</th>
-          <!-- <th>Image</th> -->
-      </tr>
-  </thead>
-  <tbody>
+    </tr>
     
-      <tr *ngFor="let product of productList">
-        
-          <td>{{product.id}}</td>
-          <td>{{product.nom}}</td>
-          <td>{{product.description}}</td>
-          <td>{{product.prix}}</td>
-          <li><a routerLink="/products/addProduct"><i class="fas fa-plus" style="font-size:24px;color:green"></i></a></li>
-          <li><a routerLink="/products/delete-product/{{product.id}}"><i class="fa fa-trash"style="font-size:24px;color:red"></i></a></li>
-          <li><a routerLink="/products/update-product/{{product.id}}"><i class="fa fa-edit" style="font-size:24px"></i></a></li>
-          
-          <!-- <td><i class="fas fa-plus" style="font-size:24px;color:green"></i><i class="fa fa-edit" style="font-size:24px"></i> <i class="fa fa-trash"style="font-size:24px;color:red"></i></td> -->
-        
-      </tr>
-  
-  </tbody>
-</table> 
+  </table>

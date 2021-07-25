@@ -1,0 +1,28 @@
+
+<p> Last Update : {{ lastUpdate | date: 'short'  }}</p>
+
+
+<li><a routerLink="/restaurants/AjouterRestaurantComponent"><i class="fa fa-plus" style="font-size:24px"> Add New Restaurant</i></a></li>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Description</th>
+    <th>Adresse</th>
+    <th>Telephone</th>
+    <th>Settings</th>
+  </tr>
+  <tr *ngFor="let restaurant of restaurantList">
+    <td>{{restaurant.id}}</td>
+    <td>{{restaurant.nom}}</td>
+    <td>{{restaurant.description}}</td>
+    <td>{{restaurant.adresse}}</td>
+    <td>{{restaurant.telephone}}</td>
+    <td><li><a routerLink="/restaurants/DeleteRestaurantComponent/{{restaurant.id}}"><i class="fa fa-trash"style="font-size:24px;color:red"></i></a></li>
+      <li><a routerLink="/restaurants/UpdateRestaurantComponent/{{restaurant.id}}"><i class="fa fa-edit" style="font-size:24px"></i></a></li></td>
+
+  </tr>
+
+</table>
