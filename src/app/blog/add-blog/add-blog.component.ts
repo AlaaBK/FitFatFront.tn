@@ -32,11 +32,12 @@ export class AddBlogComponent implements OnInit {
     };
   }
   Save(form:any){
-    var content = CKEDITOR.instances.editor1.getSnapshot().replace(/<\/?[^>]+(>|$)/g, "")
+    //var content = CKEDITOR.instances.editor1.getSnapshot().replace(/<\/?[^>]+(>|$)/g, "")
     let addedBlog = {
       title : form.title,
       createdBy : form.createdBy,
-      content : content,
+      content : form.content,
+      //content : form.content,
       publique : form.publique,
       image: this.urlImageCloud
     }

@@ -11,8 +11,7 @@ import { OrdersModule } from './orders/orders.module';
 import { AppFrameworkModule } from './app-framework/app-framework.module';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ShowAllRestaurantComponent } from "./Restaurant/show-all-restaurant/show-all-restaurant.component";
-
+import { ShowAllRestaurantComponent } from './Restaurant/show-all-restaurant/show-all-restaurant.component';
 import { AjouterRestaurantComponent } from './Restaurant/ajouter-restaurant/ajouter-restaurant.component';
 import { ShowRestaurantComponent } from './Restaurant/show-restaurant/show-restaurant.component';
 import { DeleteRestaurantComponent } from './Restaurant/delete-restaurant/delete-restaurant.component';

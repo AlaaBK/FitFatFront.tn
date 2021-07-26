@@ -3,8 +3,10 @@
     <div>
       <p class="title">{{blog.title}}</p>
       <p>
-        {{blog.content  }}
+<!--        {{blog.content  }}-->
       </p>
+        <p [innerHTML]="blog.content"></p>
+
       <span><b>Crée par :</b> {{blog.createdBy}}</span>
       <div >
         <img src={{blog.image}} alt="rover" />
