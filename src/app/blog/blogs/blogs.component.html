@@ -14,8 +14,8 @@
         <span class="fa fa-star" [ngStyle]="{'color': 'orange','margin-inline':'80px'}" *ngIf="last"></span>
       </div>
       <br>
-      <p>
-        {{blog.content }} <br> <a [routerLink]= "['/show-blog/', blog.id]" > <i class="fa fa-angle-double-right"></i> Voir plus</a>
+      <p [innerHTML]="blog.content">
+         <br> <a [routerLink]= "['/show-blog/', blog.id]" > <i class="fa fa-angle-double-right"></i> Voir plus</a>
       </p>
       <span>{{blog.createdBy}}</span>
 
