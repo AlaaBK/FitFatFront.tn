@@ -34,12 +34,15 @@ import { ShowAllProductsByCategoryComponent } from './products/show-all-products
 import { DeleteProductComponent } from './products/delete-product/delete-product.component';
 import { UpdateProductComponent } from './products/update-product/update-product.component';
 
-import {ListUsersComponent} from "./user/list-users/list-users.component";
+import {ListUsersComponent} from "./admin/list-users/list-users.component";
 import {DeleteuserComponent} from "./user/deleteuser/deleteuser.component";
 import {InscriptionComponent} from "./user/inscription/inscription.component";
-import {UpdateuserComponent} from "./user/updateuser/updateuser.component";
+import {UpdateuserComponent} from "./admin/updateuser/updateuser.component";
 import {DeleteCommentComponent} from "./blog/delete-comment/delete-comment.component";
 import {AdminCommentComponent} from "./blog/admin-comment/admin-comment.component";
+import {LoginformComponent} from "./user/loginform/loginform.component";
+import {RegisterformComponent} from "./user/registerform/registerform.component";
+import {ProfileComponent} from "./user/profile/profile.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -63,12 +66,17 @@ const routes: Routes = [
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
   { path: 'listusers', component: ListUsersComponent  },
-  { path: 'inscription', component: InscriptionComponent  },
+  //{ path: 'inscription', component: InscriptionComponent  },
   { path: 'deleteuser/:id', component: DeleteuserComponent  },
   { path: 'inscription', component: InscriptionComponent  },
   { path: 'updateuser/:id', component: UpdateuserComponent  },
-  //{ path: 'profiluser/:id', component:  ProfiluserComponent },
+  { path: 'profil/:id', component:  ProfileComponent },
   // { path: '**', component: NotFoundComponent },
+
+  //login and register
+  {path: 'login', component: LoginformComponent},
+  {path: 'register', component: RegisterformComponent},
+
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: 'orders', component: ListOrdersComponent},
 

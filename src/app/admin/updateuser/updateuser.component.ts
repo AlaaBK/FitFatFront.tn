@@ -3,8 +3,8 @@ import {Product} from "../../products/product";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductsService} from "../../products/products.service";
-import {UserService} from "../user.service";
-import {User} from "../user";
+import {UserService} from "../../user/user.service";
+import {User} from "../../user/user";
 
 @Component({
   selector: 'app-updateuser',
@@ -14,7 +14,7 @@ import {User} from "../user";
 export class UpdateuserComponent implements OnInit {
   userId: number;
 
-  userDetails: User;
+    userDetails: User;
   editForm: FormGroup;
 
   constructor(
@@ -42,11 +42,11 @@ export class UpdateuserComponent implements OnInit {
 
     const updateUser = {
       id: form.value.id ,
-      username: form.value.username,
-      roles: form.value.roles,
+      name: form.value.name,
+      lastname: form.value.lastname,
       email: form.value.email,
-      name: form.value.name
-
+      address: form.value.adress,
+      roles: form.value.roles,
     };
 
     this.UserService.updateUser(this.userId, updateUser).subscribe(data => {
