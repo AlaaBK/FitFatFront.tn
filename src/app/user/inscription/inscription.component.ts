@@ -25,6 +25,7 @@ export class InscriptionComponent implements OnInit {
     })
   }
 
+  /*
   onSubmit() {
     this.userService.addUser(this.inscriform.value)
       .subscribe( data => {
@@ -35,6 +36,8 @@ export class InscriptionComponent implements OnInit {
     console.log(this.inscriform);
     console.log(this.inscriform.value);
   }
+  *
+   */
 
 
 }

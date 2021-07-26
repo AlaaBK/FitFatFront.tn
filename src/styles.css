@@ -1,11 +1,13 @@
 /* @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://unpkg.com/bootstrap@3.4.1/dist/css/bootstrap.min.css');
+
+
 .nav-link {
-    color:#ddd!important;
+   color:#ddd!important;
 }
 .navbar-brand{
-    color:#ddd!important;
-} */
+   color:#ddd!important;
+}
 /*
 ======================
 Reset
@@ -1426,7 +1428,7 @@ Facility Media Query
 
 /*
 ======================
-Testimonial 
+Testimonial
 ======================
 */
 

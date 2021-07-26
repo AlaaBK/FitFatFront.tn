@@ -43,6 +43,18 @@ import { CKEditorModule} from 'ng2-ckeditor';
 import { AddCommentComponent } from './blog/add-comment/add-comment.component';
 import { DeleteCommentComponent } from './blog/delete-comment/delete-comment.component';
 import { AdminCommentComponent } from './blog/admin-comment/admin-comment.component';
+import { ListUsersComponent } from './admin/list-users/list-users.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import {UpdateuserComponent} from "./admin/updateuser/updateuser.component";
+import {DeleteuserComponent} from "./user/deleteuser/deleteuser.component";
+import {RegisterformComponent} from "./user/registerform/registerform.component";
+import {ProductsComponent} from "./products/products.component";
+import {AddProductComponent} from "./products/add-product/add-product.component";
+import {ShowProductComponent} from "./products/show-product/show-product.component";
+import {ShowAllProductsComponent} from "./products/show-all-products/show-all-products.component";
+import {UpdateProductComponent} from "./products/update-product/update-product.component";
+import {DeleteProductComponent} from "./products/delete-product/delete-product.component";
+import {ShowAllProductsByCategoryComponent} from "./products/show-all-products-by-category/show-all-products-by-category.component";
 
 
 @NgModule({
@@ -77,7 +89,8 @@ import { AdminCommentComponent } from './blog/admin-comment/admin-comment.compon
 
     AddCommentComponent,
     DeleteCommentComponent,
-    AdminCommentComponent],
+    AdminCommentComponent,
+    ],
 
 
   imports: [

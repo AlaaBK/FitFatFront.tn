@@ -1,14 +1,12 @@
-export interface User
+export class User
 {
-  "@context": "string",
-  "@id": "string",
-  "@type": "string",
-  id: number,
-  "username": "string",
-  "roles": ["string"],
-  "passwod":"string",
-  "email": "string",
-  "name": "string",
-  isVerified: boolean
+  id: number;
+  email: string;
+  roles: [string];
+  password: string;
+  name: string;
+  lastname: string;
+  adress: string;
+  verified: boolean;
 }
 

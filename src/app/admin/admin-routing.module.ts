@@ -11,6 +11,8 @@ import {AddBlogComponent} from "../blog/add-blog/add-blog.component";
 import {ShowBlogComponent} from "../blog/show-blog/show-blog.component";
 import {BlogsComponent} from "../blog/blogs/blogs.component";
 import {AdminCommentComponent} from "../blog/admin-comment/admin-comment.component";
+import { ListUsersComponent } from './list-users/list-users.component';
+import {UpdateuserComponent} from "./updateuser/updateuser.component";
 
 const routes: Routes = [
   { path: '', component: AdminComponent },
@@ -23,7 +25,11 @@ const routes: Routes = [
   { path: 'delete-blog/:id', component: DeleteBlogComponent  },
   { path: 'add-blog', component: AddBlogComponent  },
   { path: 'show-blog/:id', component: ShowBlogComponent },
-  { path: 'blogs', component: BlogsComponent  }
+  { path: 'blogs', component: BlogsComponent  },
+
+
+  { path: 'listusers', component: ListUsersComponent},
+  { path: 'updateuser', component: UpdateuserComponent},
 
 
 ];
