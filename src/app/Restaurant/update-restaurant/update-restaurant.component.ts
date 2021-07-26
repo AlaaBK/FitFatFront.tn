@@ -40,12 +40,12 @@ export class UpdateRestaurantComponent implements OnInit {
     console.log(form);
 
     const updateRestaurant = {
-      id: form.value.id,
-      nom: form.value.nom,
-      description: form.value.description,
-      adresse: form.value.adresse,
-      telephone: form.value.telephone,
-      image: form.value.image,
+      id: this.restaurantId,
+      nom: form.nom,
+      description: form.description,
+      adresse: form.adresse,
+      telephone: form.telephone,
+      image: form.image,
 
     };
 

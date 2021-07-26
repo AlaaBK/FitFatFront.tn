@@ -12,6 +12,7 @@
     <th>Description</th>
     <th>Adresse</th>
     <th>Telephone</th>
+    <th>image</th>
     <th>Settings</th>
   </tr>
   <tr *ngFor="let restaurant of restaurantList">
@@ -20,6 +21,7 @@
     <td>{{restaurant.description}}</td>
     <td>{{restaurant.adresse}}</td>
     <td>{{restaurant.telephone}}</td>
+    <td>{{restaurant.image}}</td>
     <td><li><a routerLink="/restaurants/DeleteRestaurantComponent/{{restaurant.id}}"><i class="fa fa-trash"style="font-size:24px;color:red"></i></a></li>
       <li><a routerLink="/restaurants/UpdateRestaurantComponent/{{restaurant.id}}"><i class="fa fa-edit" style="font-size:24px"></i></a></li></td>
 
