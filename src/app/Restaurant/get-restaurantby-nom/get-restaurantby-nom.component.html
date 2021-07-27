@@ -3,14 +3,14 @@
     <div class="card h-100">
       <a href="#"><img class="card-img-top" src="{{restaurant.nom}}" alt=""></a>
       <div class="card-body">
-        <h3>{{ restaurant.id }}</h3>
-        <h4 class="card-title">
+        <h2>{{ restaurant.id }}</h2>
+        <h3 class="card-title">
           <a routerLink="GetRestaurantbyNom/{{restaurant.nom}}">{{ restaurant.nom }}</a>
-        </h4>
-        <h5>{{ restaurant.adresse }}</h5>
+        </h3>
+        <h4>{{ restaurant.adresse }}</h4>
         <p class="card-text">{{ restaurant.description}}</p>
-        <h6>Numéro de telephone:  {{ restaurant.telephone }}</h6>
-
+        <h5>Numéro de telephone:  {{ restaurant.telephone }}</h5>
+        <h6> {{ restaurant.image }}</h6><
       </div>
 
     </div>

@@ -1,12 +1,12 @@
 <p>**** vous etes sur de modifier ces informations? **** </p>
-<form #updateRestaurantForm="ngForm">
+<!--<form #updateRestaurantForm="ngForm">-->
   <div class="form-group">
 <h2 class="bg-light mb-2">Update Restaurant</h2>
-<!--<form (submit)="updateRestaurant(updateRestaurantForm)" #updateRestaurantForm="ngForm" >
-  <div class="form-row">-->
+<form (submit)="updateRestaurant(updateRestaurantForm)" #updateRestaurantForm="ngForm" >
+  <div class="form-row">
     <div class="col-md-6 mb-3">
       <label>Restaurant id</label>
-      <input type="text" class="form-control"   [(ngModel)]="restaurantDetails.id" required name="id" ngModel>
+      <input type="number" class="form-control"   [(ngModel)]="restaurantDetails.id" required name="id" ngModel>
     </div>
   </div>
   <div class="form-row">
@@ -37,3 +37,4 @@
 
   <button class="btn btn-primary" type="submit" (click)="updateRestaurant(updateRestaurantForm.value)">Update Restaurant</button>
 </form>
+</div>

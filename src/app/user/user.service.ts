@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {User} from "./user";
 
@@ -8,11 +8,20 @@ import {User} from "./user";
   providedIn: 'root'
 })
 export class UserService {
+  jsonToSend: string;
+
 
   constructor(private httpClient: HttpClient) {
   }
 
   userUrl: string = 'http://127.0.0.1:8000/api/users';
+
+  //register and login
+  registerUrl: string = 'http://127.0.0.1:8000/register';
+  loginUrl: string = 'http://127.0.0.1:8000/login';
+
+  headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+
 
   getAllUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.userUrl);
@@ -24,9 +33,12 @@ export class UserService {
     return this.httpClient.get<User>(userUrl);
   }
 
+  /*
   addUser(User: User) {
     return this.httpClient.post(this.userUrl, User, {responseType: 'json'});
   }
+
+   */
 
 
   updateUser(userId, userBody): Observable<User>{
@@ -40,4 +52,30 @@ export class UserService {
     return this.httpClient.delete<User>(userUrl); // return an observable
   }
 
+
+
+
+
+
+  //login and registration services
+
+
+
+
+  addUser(user: User) {
+
+    // new user have to be not verified until he confirm his registration
+    user.verified = false;
+
+    // call Symfony web service and transform user Object to Json using stringify
+    return this.httpClient.post<User>(this.registerUrl, JSON.stringify(user), {headers: this.headers});
+
+  }
+
+
+  loginUser(user: User) {
+
+    this.jsonToSend ="{\"username\": "+"\""+user.email+"\""+",\"password\": "+"\""+user.password+"\""+"}";
+    return this.httpClient.post<User>(this.loginUrl, this.jsonToSend, {headers: this.headers});
+  }
 }

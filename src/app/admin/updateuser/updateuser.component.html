@@ -1,0 +1,50 @@
+
+
+<h2 class="bg-light mb-2">Update USer</h2>
+<form (submit)="updateUser(updateUserForm)" #updateUserForm="ngForm" >
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label>Name</label>
+      <input type="text" class="form-control" required name="username" disabled [(ngModel)]="userDetails.name"  ngModel>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label>Lastname</label>
+    <input type="text" class="form-control"  [(ngModel)]="userDetails.lastname" disabled required name="name" ngModel>
+  </div>
+
+
+  <div class="form-row">
+    <label >E-mail</label>
+      <input type="text" class="form-control" [(ngModel)]="userDetails.email" disabled required name="user" ngModel >
+  </div>
+
+  <div class="form-row">
+    <label >Adress</label>
+    <input type="text" class="form-control"  [(ngModel)]="userDetails.adress" disabled required name="user" ngModel >
+  </div>
+  <!--
+  <div class="form-row">
+    <label >Role</label>
+    <input type="text" class="form-control" [(ngModel)]="userDetails.roles"  required name="user" ngModel >
+  </div>
+
+-->
+  <div class="form-group">
+    <label>Role</label><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" [(ngModel)]="userDetails.roles"  type="radio" name="roleUser" id="r1"
+             value="u" #r="ngModel">
+      <label class="form-check-label" for="r1">User</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" [(ngModel)]="userDetails.roles"  type="radio" name="roleUser" id="r2"
+             value="xx">
+      <label class="form-check-label" for="r2">Restaurant Manager</label>
+    </div>
+
+  </div>
+  <button class="btn btn-primary" type="submit">Update User</button>
+</form>
+

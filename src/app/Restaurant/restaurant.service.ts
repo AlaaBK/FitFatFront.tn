@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Restaurant } from "./restaurant";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Blog} from "../blog/Model/blog";
+
+const URLcloud = 'https://api.cloudinary.com/v1_1/ddfpzl2ij/image/upload';
 
 
 @Injectable({
@@ -23,7 +26,7 @@ export class RestaurantService {
     return this.httpClient.get<Restaurant>(restauranturl);
   }
 
-  ajouterRestaurant(Restaurant: Restaurant) {
+  ajouterRestaurant(Restaurant:any) {
     return this.httpClient.post(this.restauranturl, Restaurant, {responseType: 'json'});
   }
 
@@ -42,7 +45,10 @@ export class RestaurantService {
   getRestaurantbyNom(NomRe): Observable<Restaurant[]>{
     return this.httpClient.get<Restaurant[]>('http://127.0.0.1:8000/api/restaurants'  , { params: {nom: NomRe}});
   }
-
+  uploadImageService(imageBody)
+  {
+    return this.httpClient.post<Restaurant>(URLcloud,imageBody);
+  }
 
 
 }
