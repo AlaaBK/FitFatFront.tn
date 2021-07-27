@@ -18,7 +18,7 @@ import { DeleteRestaurantComponent } from './Restaurant/delete-restaurant/delete
 import { UpdateRestaurantComponent } from './Restaurant/update-restaurant/update-restaurant.component';
 import {CommonModule} from "@angular/common";
 import { AdminRestaurantListComponent } from './admin/admin-restaurant-list/admin-restaurant-list.component';
-import { ResponsableRestaurantViewComponent } from './Restaurant/responsable-restaurant-view/responsable-restaurant-view.component';
+import { ResponsableRestaurantViewComponent } from './responsable restaurant/responsable-restaurant-view/responsable-restaurant-view.component';
 import { GetRestaurantbyAdresseComponent } from './Restaurant/get-restaurantby-adresse/get-restaurantby-adresse.component';
 import { GetRestaurantbyNomComponent } from './Restaurant/get-restaurantby-nom/get-restaurantby-nom.component';
 
@@ -59,6 +59,15 @@ import {ShowAllProductsComponent} from "./products/show-all-products/show-all-pr
 import {UpdateProductComponent} from "./products/update-product/update-product.component";
 import {DeleteProductComponent} from "./products/delete-product/delete-product.component";
 import {ShowAllProductsByCategoryComponent} from "./products/show-all-products-by-category/show-all-products-by-category.component";
+import { AjouterPlatesComponent } from './plates/ajouter-plates/ajouter-plates.component';
+import { DeletePlatesComponent } from './plates/delete-plates/delete-plates.component';
+import { GetPlatesByNomComponent } from './plates/get-plates-by-nom/get-plates-by-nom.component';
+import { GetPlatesByDesComponent } from './plates/get-plates-by-des/get-plates-by-des.component';
+import { ShowAllPlatesComponent } from './plates/show-all-plates/show-all-plates.component';
+import { ShowPlateComponent } from "./plates/show-plate/show-plate.component";
+import { UpdatePlateComponent } from "./plates/update-plate/update-plate.component";
+import { AdminPlatesListComponent } from "./admin/admin-plates-list/admin-plates-list.component";
+import { ResponsableComponent } from './responsable/responsable.component';
 
 
 @NgModule({
@@ -95,9 +104,19 @@ import {ShowAllProductsByCategoryComponent} from "./products/show-all-products-b
     DeleteCommentComponent,
     AdminCommentComponent,
 
-    ShoppingCartComponent],
 
-  
+    AjouterPlatesComponent,
+    DeletePlatesComponent,
+    GetPlatesByNomComponent,
+    GetPlatesByDesComponent,
+    ShowAllPlatesComponent,
+    ShowPlateComponent,
+    UpdatePlateComponent,
+    AdminPlatesListComponent,
+    ResponsableComponent,
+  ShoppingCartComponent
+    ],
+
 
 
   imports: [

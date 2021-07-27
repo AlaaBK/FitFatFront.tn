@@ -17,7 +17,9 @@ const routes: Routes = [
   { path: 'productCategory/:nom', component: ShowAllProductsByCategoryComponent},
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
+
   { path: 'Cart', component: ShoppingCartComponent },
+
 
 
 ];

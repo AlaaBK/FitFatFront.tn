@@ -32,9 +32,10 @@ export class AddProductComponent implements OnInit {
       prix: [, Validators.required],
       Category: ['', Validators.required],
       img: ['', Validators.required],
-     
+
     });
   }
+
 
   get f() { return this.addForm.controls; }
 
@@ -54,7 +55,7 @@ export class AddProductComponent implements OnInit {
         Category : form.Category,
         img: this.urlImageCloud
       }
-  
+
       this.productsService.addProduct(addedProduct).subscribe(()=>{
         this.messageUser = "";
         setTimeout(() => {
@@ -68,7 +69,7 @@ export class AddProductComponent implements OnInit {
       const file:File = event.target.files[0];
       if (file) {
         let formData = new FormData();
-  
+
         console.log(this.uploadForm.get('img').value+"abc");
   //check if the filecount is greater than zero, to be sure a file was selected.
         formData.append('upload_preset', 'kqe7s9ah');
@@ -80,6 +81,26 @@ export class AddProductComponent implements OnInit {
         });
       }
     }
-  
+
+    // processFile(imageInput: any) {
+    //   const file: File = imageInput.files[0];
+    //   const reader = new FileReader();
+
+    //   reader.addEventListener('load', (event: any) => {
+
+    //     this.selectedFile = new ImageSnippet(event.target.result, file);
+
+    //     this.productsService.uploadImage(this.selectedFile.file).subscribe(
+    //       (res) => {
+
+    //       },
+    //       (err) => {
+
+    //       })
+    //   });
+
+    //   reader.readAsDataURL(file);
+    // }
+
 
 }
