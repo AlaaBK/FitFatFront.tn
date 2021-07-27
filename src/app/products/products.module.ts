@@ -10,6 +10,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { ShowAllProductsByCategoryComponent } from './show-all-products-by-category/show-all-products-by-category.component';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    Ng2SearchPipeModule
+
   ]
 })
 export class ProductsModule { }

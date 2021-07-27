@@ -24,7 +24,7 @@ export class AddCategoryComponent implements OnInit {
       this.categoryService.addCategory(this.addForm.value)
         .subscribe( data => {
           console.log(data);
-         this.router.navigate(['/category']);
+         this.router.navigate(['/admin/CategoryTable']);
         });
     }
 

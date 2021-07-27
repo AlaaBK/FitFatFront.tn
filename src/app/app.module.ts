@@ -44,6 +44,8 @@ import { CKEditorModule} from 'ng2-ckeditor';
 import { AddCommentComponent } from './blog/add-comment/add-comment.component';
 import { DeleteCommentComponent } from './blog/delete-comment/delete-comment.component';
 import { AdminCommentComponent } from './blog/admin-comment/admin-comment.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ShoppingCartComponent } from './products/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -78,7 +80,8 @@ import { AdminCommentComponent } from './blog/admin-comment/admin-comment.compon
 
     AddCommentComponent,
     DeleteCommentComponent,
-    AdminCommentComponent],
+    AdminCommentComponent,
+    ShoppingCartComponent],
 
 
   imports: [
@@ -96,10 +99,7 @@ import { AdminCommentComponent } from './blog/admin-comment/admin-comment.compon
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    
-    
-
-
+    Ng2SearchPipeModule,
     CKEditorModule
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '' }],

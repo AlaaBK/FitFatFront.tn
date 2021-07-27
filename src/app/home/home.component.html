@@ -109,14 +109,17 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="deal_ofthe_week_img">
-            <img src="assets/images/unnamed.jpg" alt="">
-          </div>
+          <!-- <div class="deal_ofthe_week_img" style="background-image:url({{product.img}})"> -->
+            
+            <img src="{{product.img}}" alt=""> 
+            <!-- <div class="blog_background" style="background-image:url({{product.img}})"></div>          -->
         </div>
+      </div>
         <div class="col-lg-6 text-right deal_ofthe_week_col">
           <div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
             <div class="section_title">
               <h1>Exclusively Available In Our Store</h1>
-              <small>you can enjoy your delicious low carb aasida without feeling guilty</small>
+              <small>{{ product.description }}</small>
             </div>
             <div class="red_button deal_ofthe_week_button"><a href="#">Buy Now</a></div>
           </div>

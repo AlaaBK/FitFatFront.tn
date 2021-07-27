@@ -4,6 +4,8 @@ import {Product} from './product'
 import { Observable } from 'rxjs';
 import { Category } from '../categories/category';
 
+const URLcloud = 'https://api.cloudinary.com/v1_1/ddfpzl2ij/image/upload';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,24 @@ import { Category } from '../categories/category';
 export class ProductsService {
 
   constructor(private httpClient: HttpClient) { }
+
   productUrl:string =  'http://127.0.0.1:8000/api/products';
+  shoppingCart =  new Map()
+  shoppingCartTotalPrice:any = 0;
+
+  currentProduct: Product = {
+    "@context": "string",
+    "@id": "string",
+    "@type": "string",
+    id: null,
+    nom: '',
+    description: '',
+    prix: 0,
+    Category: '',
+    img: '',
+    quantity: 0
+  }
+
   getAllProducts(): Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.productUrl);
   }
@@ -33,7 +52,7 @@ export class ProductsService {
     return this.httpClient.get<Product>(productUrl);
   }
 
-  addProduct(Product: Product) {
+  addProduct(Product: any) {
     return this.httpClient.post(this.productUrl, Product, {responseType: 'json'});
   }
 
@@ -47,6 +66,27 @@ export class ProductsService {
     return this.httpClient.delete<Product>(productUrl); // return an observable
   }
 
+  addProductToShoppingCart(product:Product, quantity:number){
+    this.shoppingCart = new Map(JSON.parse(sessionStorage.getItem("shoppingCart")));
+    this.shoppingCartTotalPrice = sessionStorage.getItem("shoppingCartTotalPrice");
+    if (this.shoppingCart.has(product.id)){
+      let oldQuantity = this.shoppingCart.get(product.id)[1];
+      let newQuantity = quantity+oldQuantity;
+      let cartItem = [product,newQuantity]
+      this.shoppingCart.set(product.id,cartItem)
+    }
+    else{
+      let cartItem = [product,quantity]
+      this.shoppingCart.set(product.id,cartItem)
+    }
+    this.shoppingCartTotalPrice=Number(this.shoppingCartTotalPrice)+product.prix*quantity
+
+    console.log(this.shoppingCart)
+    console.log(this.shoppingCartTotalPrice)
+    sessionStorage.setItem('shoppingCart', JSON.stringify([...this.shoppingCart]));
+    sessionStorage.setItem('shoppingCartTotalPrice', this.shoppingCartTotalPrice);
+  }
+
   // public uploadImage(image: File): any {
   //   const formData = new FormData();
 
@@ -57,5 +97,9 @@ export class ProductsService {
   // }
 
 
+  uploadImageService(imageBody)
+  {
+    return this.httpClient.post<Product>(URLcloud,imageBody);
+  }
 }
 

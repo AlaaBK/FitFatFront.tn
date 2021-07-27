@@ -22,7 +22,7 @@ export class DeleteProductComponent implements OnInit {
       this.productId = data.id;
 
       this.productsService.deleteProduct(this.productId).subscribe(deleteProductdata => {{
-        console.log('Deleted product');
+        // console.log('Deleted product');
         this.router.navigate(['/products']);
       }})
     });

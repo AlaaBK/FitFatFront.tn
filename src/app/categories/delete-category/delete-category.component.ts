@@ -23,7 +23,7 @@ export class DeleteCategoryComponent implements OnInit {
 
       this.CategoryService.deleteCategory(this.categoryId).subscribe(deletedata => {{
         console.log('Deleted category');
-        this.router.navigate(['/category']);
+        this.router.navigate(['/admin/CategoryTable']);
       }})
     });
   }

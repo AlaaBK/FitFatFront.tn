@@ -33,6 +33,7 @@ import {InscriptionComponent} from "./user/inscription/inscription.component";
 import {UpdateuserComponent} from "./user/updateuser/updateuser.component";
 import {DeleteCommentComponent} from "./blog/delete-comment/delete-comment.component";
 import {AdminCommentComponent} from "./blog/admin-comment/admin-comment.component";
+import { ShoppingCartComponent } from './products/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'addProduct', component: AddProductComponent },
   { path: 'showProduct/:id', component: ShowProductComponent },
   { path: 'showAllProducts', component: ShowAllProductsComponent },
+
   // { path: 'category/:Category', component: ShowAllProductsByCategoryComponent},
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
@@ -75,6 +77,7 @@ const routes: Routes = [
   { path: 'GetRestaurantbyAdresse/:adresse', component: GetRestaurantbyAdresseComponent },
   { path: 'GetRestaurantbyNom/:nom', component: GetRestaurantbyNomComponent },
 
+  { path: 'cart', component: ShoppingCartComponent },
   // { path: 'restaurant', loadChildren: () => import('./restaurant/restaurant.module').then(r => r.RestaurantModule) }
 
   { path: 'category', loadChildren: () => import('./categories/category/category.module').then(m => m.CategoryModule) },

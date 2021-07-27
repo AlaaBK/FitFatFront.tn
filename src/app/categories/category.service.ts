@@ -41,6 +41,8 @@ export class CategoryService {
     const CategorytUrl = 'http://127.0.0.1:8000/api/categories/';
     return this.httpClient.get<Category[]>(CategorytUrl , { params: {nom: nomCat}}); // return an observable
   }
-
+  getCategoryById(id: any) : Observable<Category> {
+    return this.httpClient.get<Category>('http://127.0.0.1:8000/api/categories/' + id);
+  }
 
 }

@@ -1,35 +1,78 @@
 <div class="container">
-    <h2 class="text-center">Add Product</h2>
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-
+    <!-- <h2 class="text-center">Add Product</h2> -->
+    <!-- <form [formGroup]="addForm" (ngSubmit)="onSubmit()"> -->
+    <!-- <form #Product="ngForm" [formGroup]="addForm" (ngSubmit)="onSubmit(Product.value)"> -->
+      <form #Product="ngForm" class="add-blog" (ngSubmit)="onSubmit(Product.value)">
        <div class="form-group">
         <label for="nom">Nom</label>
-        <input type="text"  formControlName="nom" placeholder="Write Product Name"  name="nom" class="form-control" id="nom">
+        <input class="form-control"  type="text"  name="nom" placeholder="Write Product Name"  ngModel required pattern="[a-zA-Z]" #e="ngModel">
+      </div>
+
+      <div *ngIf="e.invalid && e.touched">
+        <div *ngIf="e.errors?.required">
+          <div class="alert alert-danger" role="alert">Merci de saisir le nom du produit !</div>
+        </div>
+        <div *ngIf="e.errors?.pattern">
+          <div class="alert alert-danger" role="alert">Merci de saisir un nom valide !</div>
+        </div>
       </div>
  
       <div class="form-group">
         <label for="description">description</label>
-        <input type="text" formControlName="description" placeholder="description" name="description" class="form-control" id="description">
+        <input class="form-control" type="text" name="description" placeholder="description" ngModel required pattern="[a-zA-Z0-9]" #e="ngModel">
+      </div>
+      <div *ngIf="e.invalid && e.touched">
+         <div *ngIf="e.errors?.required">
+          <div class="alert alert-danger" role="alert">Merci de saisir la description !</div>
+        </div> 
+        <!-- <div *ngIf="f.errors?.pattern">
+          <div class="alert alert-danger" role="alert">Merci de saisir une description valide !</div>
+        </div> -->
       </div>
 
       <div class="form-group">
         <label for="prix">prix</label>
-        <input type="number" formControlName="prix" placeholder="prix" name="prix" class="form-control" id="prix">
+        <input class="form-control" type="number" name="prix" placeholder="prix" name="prix" ngModel required pattern="[0-9]" #e="ngModel">
+      </div>
+
+      <div *ngIf="e.invalid && e.touched">
+        <div *ngIf="e.errors?.required">
+          <div class="alert alert-danger" role="alert">Merci de saisir le prix !</div>
+        </div>
+        <!-- <div *ngIf="e.errors?.pattern">
+          <div class="alert alert-danger" role="alert">Merci de saisir un prix valide !</div>
+        </div> -->
       </div>
 
   
       <div class="form-group">
         <label for="Category">Category</label>
-        <input type="text" formControlName="Category" placeholder="Category" name="Category" class="form-control" id="Category">
+        <input class="form-control" type="text" name="Category" placeholder="Category" ngModel required pattern="/api/categories/[0-9]" #e="ngModel">
       </div>
 
-     
-      <div class="form-group">
-        <label for="img">Image</label>
-        <input type="text" formControlName="img" placeholder="img" name="img" class="form-control" id="img">
-      </div> 
+      <div *ngIf="e.invalid && e.touched">
+        <div *ngIf="e.errors?.required">
+          <div class="alert alert-danger" role="alert">Merci de saisir la catégorie !</div>
+        </div>
+        <!-- <div *ngIf="e.errors?.pattern">
+          <div class="alert alert-danger" role="alert">Merci de saisir une catégorie valide !</div>
+        </div> -->
+      </div>
 
-      <button class="btn btn-success">Submit</button>
+
+      <form [formGroup]="uploadForm"  class="was-validated">
+        <div class="mb-3">
+          <label  class="form-label">Image du produit</label>
+    
+          <input type="file" class="form-control" aria-label="file example" name ="image" (change)="onFileSelected($event)" #fileUpload>
+    
+          <div *ngIf="alertUpload" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Succés!</strong> image uploaded
+    
+          </div>
+        </div>
+      </form>
+      <button class="btn btn-success" >Submit</button>
    
 
     </form>

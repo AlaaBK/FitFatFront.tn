@@ -4,6 +4,7 @@ export interface Category {
     "@type": "string",
     "id": number,
     "nom": "string",
+    products: any [],
 
 }
 

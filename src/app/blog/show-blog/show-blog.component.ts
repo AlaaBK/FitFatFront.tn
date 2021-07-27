@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogService} from "../blog.service";
 import {ActivatedRoute} from "@angular/router";
-import {CommentService} from "../comment.service";
+import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-show-blog',

@@ -7,6 +7,7 @@ import {ShowAllProductsComponent} from './show-all-products/show-all-products.co
 import { ShowAllProductsByCategoryComponent } from './show-all-products-by-category/show-all-products-by-category.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', component: ShowAllProductsComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'productCategory/:nom', component: ShowAllProductsByCategoryComponent},
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
+  { path: 'Cart', component: ShoppingCartComponent },
+
 
 ];
 

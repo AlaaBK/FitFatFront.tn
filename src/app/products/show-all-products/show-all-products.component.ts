@@ -11,7 +11,9 @@ export class ShowAllProductsComponent implements OnInit {
 
   productList: Product[]=[] ;
   productId = 0;
-  constructor(private productsService: ProductsService, private router:Router) { }
+  searchText: string;
+
+  constructor(public productsService: ProductsService, private router:Router) { }
 
   ngOnInit(): void  {
     this.productsService.getAllProducts().subscribe( data =>

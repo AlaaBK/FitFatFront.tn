@@ -14,9 +14,17 @@ class ImageSnippet {
 })
 export class AddProductComponent implements OnInit {
   selectedFile: ImageSnippet;
-  constructor(private formBuilder: FormBuilder,private router: Router, private productsService: ProductsService) { }
+  alertUpload:boolean=false
+  urlImageCloud:string=""
+  uploadForm: FormGroup;
+  messageUser : string = "";
+
+  constructor(private formBuilder: FormBuilder,private router: Router,private formbuilder:FormBuilder, private productsService: ProductsService) { }
   addForm: FormGroup;
   ngOnInit(): void {
+    this.uploadForm = this.formbuilder.group({
+      img: ['']
+    });
     this.addForm = this.formBuilder.group({
       //id: [],
       nom: ['', Validators.required],
@@ -29,33 +37,49 @@ export class AddProductComponent implements OnInit {
   }
 
   get f() { return this.addForm.controls; }
-    onSubmit() {
-      this.productsService.addProduct(this.addForm.value)
-        .subscribe( data => {
-          console.log(data);
-         this.router.navigate(['']);
-        });
+
+    // onSubmit() {
+    //   this.productsService.addProduct(this.addForm.value)
+    //     .subscribe( data => {
+    //       console.log(data);
+    //      this.router.navigate(['']);
+    //     });
+    // }
+
+    onSubmit(form:any){
+      let addedProduct = {
+        nom : form.nom,
+        description : form.description,
+        prix : form.prix,
+        Category : form.Category,
+        img: this.urlImageCloud
+      }
+  
+      this.productsService.addProduct(addedProduct).subscribe(()=>{
+        this.messageUser = "";
+        setTimeout(() => {
+          this.router.navigate(['admin/ProductTable']);
+        }, 1500);
+      });
     }
 
-    // processFile(imageInput: any) {
-    //   const file: File = imageInput.files[0];
-    //   const reader = new FileReader();
+    onFileSelected(event) {
+
+      const file:File = event.target.files[0];
+      if (file) {
+        let formData = new FormData();
   
-    //   reader.addEventListener('load', (event: any) => {
-  
-    //     this.selectedFile = new ImageSnippet(event.target.result, file);
-  
-    //     this.productsService.uploadImage(this.selectedFile.file).subscribe(
-    //       (res) => {
-          
-    //       },
-    //       (err) => {
-          
-    //       })
-    //   });
-  
-    //   reader.readAsDataURL(file);
-    // }
+        console.log(this.uploadForm.get('img').value+"abc");
+  //check if the filecount is greater than zero, to be sure a file was selected.
+        formData.append('upload_preset', 'kqe7s9ah');
+        formData.append('file', file);
+        this.productsService.uploadImageService(formData).subscribe((result)=>{
+          console.log(result,"updated successfully");
+          this.urlImageCloud = result["url"];
+          this.alertUpload=true;
+        });
+      }
+    }
   
 
 }
