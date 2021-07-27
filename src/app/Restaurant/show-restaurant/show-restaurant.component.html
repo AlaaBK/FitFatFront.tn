@@ -1,15 +1,19 @@
-<p> Consulter les informations pour un restaurant </p>
+<p> Consulter les informations d'un restaurant </p>
+<div class="card-body">
+<div class="row Show">
 
-<div class="card h-100">
-  <a href="#"><img class="card-img-top" src="{{restaurantDetails?.nom}}" alt=""></a>
-  <div class="card-body">
-    <h3>{{ restaurantDetails?.id }}</h3>
-    <h4>{{ restaurantDetails?.adresse }}</h4>
-    <p class="card-text">{{ restaurantDetails?.description}}</p>
-    <h5>numéro de telephone{{ restaurantDetails?.telephone }}</h5>
-    <h6>: {{ restaurantDetails?.image }}</h6>
+    <div>  <div class="col text-center">
+      <p class="title">{{restaurantDetails.nom}}</p></div>
+      <p>
 
-
-  </div>
-
+      </p>
+      <p>{{restaurantDetails.description}}</p>
+      <span><b>{{restaurantDetails.adresse}}</b></span>
+<br>
+      <span><b>numéro de téléphone : </b> {{restaurantDetails.telephone}}</span>
+      <div >
+        <img src={{restaurantDetails.image}} alt="rover" />
+      </div>
+    </div>
+</div>
 </div>

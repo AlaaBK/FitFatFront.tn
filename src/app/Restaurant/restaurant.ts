@@ -1,8 +1,8 @@
 export interface Restaurant {
 
-  "@context": "string",
+ /* "@context": "string",
   "@id": "string",
-  "@type": "string",
+  "@type": "string",*/
   id: number,
   "nom": "string",
   "description": "string",

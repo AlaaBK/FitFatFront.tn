@@ -7,7 +7,7 @@ export interface Blog{
   id: number,
     "title" : "string";
     "createdBy" : "string";
-    "content" : "string";
+    "content" : "text";
     "publique" : "string";
     "image" : "string";
 
