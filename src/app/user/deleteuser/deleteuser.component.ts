@@ -20,8 +20,8 @@ export class DeleteuserComponent implements OnInit {
       this.userId = data.id;
 
       this.UserService.deleteUser(this.userId).subscribe(deleteUserdata => {{
-        console.log('Deleted user');
-        this.router.navigate(['/listusers']);
+        confirm('you are about to delete your account, are you sure ?');
+        this.router.navigate(['/home']);
       }})
     });
   }

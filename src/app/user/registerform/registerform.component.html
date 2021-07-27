@@ -45,33 +45,6 @@
       <div *ngIf="p.errors?.minlength">password should be at least 6 characters</div>
     </div>
 
-
-    <!--
-
-        try to do with select TODO: adding $ to app ts
-
-        <div class="form-group">
-        <select class="btn btn-info btn-lg" required [(ngModel)]="user.role" name="role" #r="ngModel">
-          <option disabled [defaultSelected]="user.role">Select a Role</option>
-          <option>User</option>
-          <option>Restaurant Manager</option>
-        </select>
-        </div>
-
-            <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Action
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </div>
-    -->
-
     <div class="form-group">
       <label for="adr">Adress<sup class="sup-style">*</sup></label>
       <textarea name="adress" required="" [defaultValue]="" class="form-control" id="adr" rows="3"
@@ -86,13 +59,13 @@
     <div class="form-group">
       <label>Role<sup class="sup-style">*</sup></label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" [(ngModel)]="user.roles"  type="radio" name="roleUser" id="r1"
-               value="u" #r="ngModel">
+        <input class="form-check-input" [(ngModel)]="user.roles" required  type="radio" name="roleUser" id="r1"
+               value="user" #r="ngModel">
         <label class="form-check-label" for="r1">User</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" [(ngModel)]="user.roles"  type="radio" name="roleUser" id="r2"
-               value="xx">
+        <input class="form-check-input" [(ngModel)]="user.roles"  required type="radio" name="roleUser" id="r2"
+               value="rr">
         <label class="form-check-label" for="r2">Restaurant Manager</label>
       </div>
     </div>

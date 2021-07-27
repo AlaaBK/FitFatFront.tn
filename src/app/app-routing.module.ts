@@ -67,7 +67,7 @@ const routes: Routes = [
   { path: 'deleteuser/:id', component: DeleteuserComponent  },
   { path: 'inscription', component: InscriptionComponent  },
   { path: 'updateuser/:id', component: UpdateuserComponent  },
-  { path: 'profil/:id', component:  ProfileComponent },
+  { path: 'profile/:id', component:  ProfileComponent },
   // { path: '**', component: NotFoundComponent },
 
   //login and register
