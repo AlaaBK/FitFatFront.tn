@@ -20,7 +20,7 @@ import {ShowRestaurantComponent} from "./Restaurant/show-restaurant/show-restaur
 import {DeleteRestaurantComponent} from "./Restaurant/delete-restaurant/delete-restaurant.component";
 import {UpdateRestaurantComponent} from "./Restaurant/update-restaurant/update-restaurant.component";
 import {AdminRestaurantListComponent} from "./admin/admin-restaurant-list/admin-restaurant-list.component";
-import {ResponsableRestaurantViewComponent} from "./Restaurant/responsable-restaurant-view/responsable-restaurant-view.component";
+import {ResponsableRestaurantViewComponent} from "./responsable restaurant/responsable-restaurant-view/responsable-restaurant-view.component";
 import {GetRestaurantbyAdresseComponent} from "./Restaurant/get-restaurantby-adresse/get-restaurantby-adresse.component";
 import {GetRestaurantbyNomComponent} from "./Restaurant/get-restaurantby-nom/get-restaurantby-nom.component";
 
@@ -43,6 +43,16 @@ import {AdminCommentComponent} from "./blog/admin-comment/admin-comment.componen
 import {LoginformComponent} from "./user/loginform/loginform.component";
 import {RegisterformComponent} from "./user/registerform/registerform.component";
 import {ProfileComponent} from "./user/profile/profile.component";
+
+import {AjouterPlatesComponent} from "./plates/ajouter-plates/ajouter-plates.component";
+import {DeletePlatesComponent} from "./plates/delete-plates/delete-plates.component";
+import {GetPlatesByDesComponent} from "./plates/get-plates-by-des/get-plates-by-des.component";
+import {GetPlatesByNomComponent} from "./plates/get-plates-by-nom/get-plates-by-nom.component";
+import {ShowAllPlatesComponent} from "./plates/show-all-plates/show-all-plates.component";
+import {ShowPlateComponent} from "./plates/show-plate/show-plate.component";
+import {UpdatePlateComponent} from "./plates/update-plate/update-plate.component";
+import {AdminPlatesListComponent} from "./admin/admin-plates-list/admin-plates-list.component";
+import {ResponsableComponent} from "./responsable/responsable.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -88,7 +98,16 @@ const routes: Routes = [
   { path: 'AdminRestaurantList', component: AdminRestaurantListComponent},
   { path: 'ResponsableRestaurant/:id', component: ResponsableRestaurantViewComponent },
   { path: 'GetRestaurantbyAdresse/:adresse', component: GetRestaurantbyAdresseComponent },
-  { path: 'GetRestaurantbyNom/:nom', component: GetRestaurantbyNomComponent },
+
+  { path: 'AjouterPlates', component: AjouterPlatesComponent },
+  { path: 'DeletePlates/:id', component: DeletePlatesComponent },
+  { path: 'GetPlatesByDes/:description', component: GetPlatesByDesComponent },
+  { path: 'GetPlatesByNom/:nom', component: GetPlatesByNomComponent },
+  { path: 'showAllPlates', component: ShowAllPlatesComponent },
+  { path: 'ShowPlate/:id', component: ShowPlateComponent },
+  { path: 'UpdatePlate/:id', component: UpdatePlateComponent },
+  { path: 'AdminPlatesList', component: AdminPlatesListComponent},
+  { path: 'responsable', component: ResponsableComponent},
 
   // { path: 'restaurant', loadChildren: () => import('./restaurant/restaurant.module').then(r => r.RestaurantModule) }
 

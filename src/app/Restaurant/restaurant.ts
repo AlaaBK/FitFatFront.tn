@@ -8,5 +8,6 @@ export interface Restaurant {
   "description": "string",
   "adresse": "string",
   "telephone": "string",
+  plates : any[],
   "image" : "string"
 }

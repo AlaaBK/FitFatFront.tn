@@ -17,8 +17,6 @@ const routes: Routes = [
   { path: 'delete-product/:id', component: DeleteProductComponent},
   { path: 'update-product/:id', component: UpdateProductComponent},
 
-
-
 ];
 
 @NgModule({

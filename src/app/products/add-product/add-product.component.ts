@@ -24,9 +24,10 @@ export class AddProductComponent implements OnInit {
       prix: [, Validators.required],
       Category: ['', Validators.required],
       img: ['', Validators.required],
-     
+
     });
   }
+
 
   get f() { return this.addForm.controls; }
     onSubmit() {
@@ -40,22 +41,22 @@ export class AddProductComponent implements OnInit {
     // processFile(imageInput: any) {
     //   const file: File = imageInput.files[0];
     //   const reader = new FileReader();
-  
+
     //   reader.addEventListener('load', (event: any) => {
-  
+
     //     this.selectedFile = new ImageSnippet(event.target.result, file);
-  
+
     //     this.productsService.uploadImage(this.selectedFile.file).subscribe(
     //       (res) => {
-          
+
     //       },
     //       (err) => {
-          
+
     //       })
     //   });
-  
+
     //   reader.readAsDataURL(file);
     // }
-  
+
 
 }

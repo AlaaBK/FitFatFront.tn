@@ -10,7 +10,7 @@ import {RestaurantService} from "../restaurant.service";
 })
 export class ShowRestaurantComponent implements OnInit {
   restaurantId : any;
-  restaurantDetails: Restaurant;
+  restaurantDetails: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private restaurantsService: RestaurantService,
