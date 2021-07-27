@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {User} from "./user";
 
 
@@ -9,6 +9,9 @@ import {User} from "./user";
 })
 export class UserService {
   jsonToSend: string;
+
+  //login state
+  loginStatus = new BehaviorSubject<boolean>(this.checkLoginStatus());
 
 
   constructor(private httpClient: HttpClient) {
@@ -63,19 +66,22 @@ export class UserService {
 
 
   addUser(user: User) {
-
-    // new user have to be not verified until he confirm his registration
-    user.verified = false;
-
     // call Symfony web service and transform user Object to Json using stringify
     return this.httpClient.post<User>(this.registerUrl, JSON.stringify(user), {headers: this.headers});
-
   }
 
 
   loginUser(user: User) {
-
+    this.loginStatus.next(true);
     this.jsonToSend ="{\"username\": "+"\""+user.email+"\""+",\"password\": "+"\""+user.password+"\""+"}";
     return this.httpClient.post<User>(this.loginUrl, this.jsonToSend, {headers: this.headers});
+  }
+
+  private checkLoginStatus() {
+    return false;
+  }
+
+  isLogesIn(){
+    return this.loginStatus.asObservable();
   }
 }

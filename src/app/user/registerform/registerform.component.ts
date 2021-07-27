@@ -23,29 +23,23 @@ export class RegisterformComponent implements OnInit {
 
   registerUser() {
 
-
-    //TODO: change role
-    if (this.user.roles[0] == "u") {
+    if (this.user.roles.includes("user")) {
       this.user.roles = ["UR"];
-    } else if(this.user.roles[0] == "rr")
+    } else if(this.user.roles.includes("rr"))
       this.user.roles = ["RR"];
     else
       this.user.roles =["ADMIN"];
 
+    // new user have to be not verified until he confirm his registration
+    this.user.verified = false;
+
     this.userService.addUser(this.user).subscribe(
       data => {
         alert('Welcome to fitfat');
-        console.log('data type : ',typeof(data))
-        console.log('data content : ',data);
         this.result = JSON.stringify(data);
-        console.log('change data to string: ',typeof (this.result));
-
         this.router.navigate(['/login']);
       }
     );
-
-
-    //TODO : manage the data before redirect to profile
 
 
   }

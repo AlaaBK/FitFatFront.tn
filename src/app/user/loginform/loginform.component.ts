@@ -12,13 +12,12 @@ export class LoginformComponent implements OnInit {
 
   user: User;
   result: string;
-  isConnected: boolean;
+
 
   constructor(private userService:UserService,private router: Router) { }
 
   ngOnInit(): void {
     this.user = new User();
-    this.isConnected = false;
   }
 
   login() {
@@ -35,9 +34,6 @@ export class LoginformComponent implements OnInit {
          else
            this.router.navigate(['/home']);
 
-         this.isConnected = true;
-
-         console.log("test ",this.isConnected);
 
        }
      );

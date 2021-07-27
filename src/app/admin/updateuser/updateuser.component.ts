@@ -29,7 +29,7 @@ export class UpdateuserComponent implements OnInit {
 
       this.UserService.ShowUser(this.userId).subscribe(userData => {
         this.userDetails = userData;
-        console.log(this.userDetails);
+        console.log("before ",this.userDetails);
       });
 
     });
@@ -41,17 +41,17 @@ export class UpdateuserComponent implements OnInit {
     console.log(form);
 
     const updateUser = {
-      id: form.value.id ,
+      id: form.value.id,
       name: form.value.name,
       lastname: form.value.lastname,
       email: form.value.email,
-      address: form.value.adress,
+      adress: form.value.adress,
       roles: form.value.roles,
     };
 
     this.UserService.updateUser(this.userId, updateUser).subscribe(data => {
-      console.log(data);
-      this.router.navigate(['/listusers']);
+      console.log("after : ",data);
+      this.router.navigate(['admin/listusers']);
     });
 
   }
