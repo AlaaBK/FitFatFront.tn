@@ -3,7 +3,7 @@
         <tr>
             <th>Product</th>
             <th>Quantity</th>
-            <th>Subtotal</th>
+            <th>Price</th>
         </tr>
         <tr *ngFor="let cartItem of productService.shoppingCart|keyvalue">
             <td>
@@ -11,18 +11,18 @@
                     <img src="{{cartItem.value[0].img}}">
                     <div>
                         <p>{{cartItem.value[0].nom}}</p>
-                        <small>{{cartItem.value[0].description}}</small>                       
+                        <small>{{cartItem.value[0].description}}</small>
                         <br>
-                         <a href="" (click)="deleteProductFromCart(cartItem.key)">Remove</a>  
-                        
+                         <a href="" (click)="deleteProductFromCart(cartItem.key)">Remove</a>
+
                     </div>
                 </div>
             </td>
-           <td><input type="number" value="{{cartItem.value[1]}}"></td> 
+           <td><input type="number" value="{{cartItem.value[1]}}"></td>
 
            <td>{{cartItem.value[0].prix}} TND</td>
 
-<!--            
+<!--
             <td>Tolal</td>
             {{cartItem.value[0].prix*cartItem.value[1]}}
              -->
@@ -34,14 +34,14 @@
         <table>
 
 
-          
 
-            
+
+
             <tr>
                 <td>
                     <a routerLink="/products" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
                 </td>
-                
+
             </tr>
         </table>
     </div>
